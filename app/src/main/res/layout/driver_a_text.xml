@@ -1,0 +1,2473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mainfish.europrotocola04.MainMenu"
+    android:layout_height="wrap_content" android:layout_width="match_parent">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/tsa3"
+                    android:layout_column="0"
+                    android:gravity="center_horizontal"
+                    style="@style/step_header_first"
+                    android:paddingEnd="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow android:paddingEnd="8dp"
+                android:paddingRight="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/tsa4"
+                    android:layout_column="0"
+                    android:gravity="center_horizontal"
+                    style="@style/step_header_last"
+                    android:paddingRight="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonID_A"
+                    android:layout_column="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="false"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:hint="@string/tsa4a"
+                    style="@style/edit_hint"
+                    android:inputType="number" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow android:paddingEnd="8dp"
+                android:paddingRight="8dp">
+
+                <Space
+                    android:layout_height="20dp"
+                    android:layout_column="0"
+                    android:layout_weight="1"
+                    android:layout_width="0dp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count6a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa5"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa7"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa8"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_surname"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa10"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_name"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa11"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_fathername"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa12"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_full"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="textMultiLine"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa14"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_adress"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="text">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa15"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_index"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa16"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_country"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="textCapWords"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/countries_array_full">
+                </Spinner>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa17"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_phone"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:hint="@string/tsa18"
+                    android:inputType="phone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa19"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_email"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:hint="@string/tsa20"
+                    android:inputType="textEmailAddress"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray240">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count7a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa22"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa23"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa24"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_model"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="textCapWords">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa25"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_regsign"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="textCapCharacters">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa26"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_regcountry"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/countries_array_full" >
+                </Spinner>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa27"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight="1" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/driver_a_switch_pricep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:checked="false"
+                    android:textOff="НЕТ"
+                    android:textOn="ДА"
+                    app:showText="true"
+                    android:layout_gravity="center"
+                    android:layout_column="2"
+                    android:layout_weight=".3"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa28"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_regsign_pricep"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="textCapCharacters"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa29"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_regcountry_pricep"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="textCapWords"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/countries_array_full" >
+                </Spinner>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray240">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count8a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa30"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa31"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa32"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_0"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa33"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_weight=".15" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:text="@string/tsa34"
+                        android:id="@+id/driver_a_insurance_choose"
+                        android:layout_column="1"
+                        android:background="@drawable/back_button_driver_a"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:paddingEnd="40dp"
+                        android:paddingStart="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        style="@style/button"
+                        android:layout_weight="1"
+                        android:onClick="btnOpenIns" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_weight=".15"
+                        android:layout_column="3" />
+                </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa35"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1"
+                    android:id="@+id/driver_a_insurance_name" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa36"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_0"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa37"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="3"
+                    android:layout_weight="1"
+                    android:id="@+id/driver_a_radio_ins">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tsa38"
+                        android:id="@+id/radioButton3"
+                        style="@style/fill_form"
+                        android:layout_marginLeft="34dp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tsa41"
+                        android:id="@+id/radioButton4"
+                        style="@style/fill_form"
+                        android:layout_marginLeft="34dp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tsa42"
+                        android:id="@+id/radioButton5"
+                        style="@style/fill_form"
+                        android:layout_marginLeft="34dp" />
+
+                </RadioGroup>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa43"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_seria"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="textCapCharacters">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa44"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_N"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="number">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa46"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_form"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="datetime|date">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa47"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/driver_a_to"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa48"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_doc_country"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/countries_array_full">
+                </Spinner>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa49"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_doc_tel"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="text">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa50"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_0"
+                    android:layout_weight="1" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/driver_a_switch_insured"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:checked="false"
+                    android:textOff="НЕТ"
+                    android:textOn="ДА"
+                    app:showText="true"
+                    android:layout_gravity="center"
+                    android:layout_column="2"
+                    android:layout_weight=".3"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa51"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray240">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count9a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa53"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa54"
+                    android:layout_column="1"
+                    style="@style/descr"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa8"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_surname"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa10"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_name"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa11"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_fathername"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa55"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_birthday"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="datetime|date">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa14"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_adress"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa15"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_index"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa16"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_country"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="textCapWords"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/countries_array_full">
+                </Spinner>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa17"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_phone"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:hint="@string/tsa18"
+                    android:inputType="phone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa19"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_email"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:hint="@string/tsa20"
+                    android:inputType="textEmailAddress"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:src="@drawable/shape_circle_blue"
+                    android:scaleType="centerInside"
+                    android:layout_weight="0"
+                    android:cropToPadding="false"
+                    android:layout_gravity="clip_vertical|top" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa55a"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa43"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_series"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="datetime|date"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa44"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_num"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="datetime|date"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa56"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_category"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom"
+                    android:inputType="textCapCharacters">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa57"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form"
+                    android:layout_weight=".8" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/driver_a_lic_valid"
+                    android:layout_weight="1"
+                    style="@style/edit_hint"
+                    android:inputType="datetime|date"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="bottom">
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray240">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count10a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa58"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1"
+                    android:paddingRight="8dp"
+                    android:paddingEnd="8dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:text="@string/draw_hit"
+                    android:id="@+id/draw_hit_A"
+                    android:layout_column="1"
+                    android:background="@drawable/back_button_driver_a"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    style="@style/button"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray240">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="24dp"
+                    android:layout_column="0"
+                    android:background="@drawable/square_blue"
+                    android:layout_weight="0"
+                    android:text="@string/count11a"
+                    android:gravity="center_horizontal"
+                    style="@style/counts_black"
+                    android:textAppearance="@style/counts_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tsa59"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    style="@style/fill_form_heading"
+                    android:layout_weight="1"
+                    android:paddingRight="8dp"
+                    android:paddingEnd="8dp" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/driver_a_damage"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:hint="@string/tsa60"
+                    style="@style/edit_hint"
+                    android:textColor="@color/colorGray"
+                    android:textColorHint="@color/colorGray80"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" >
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

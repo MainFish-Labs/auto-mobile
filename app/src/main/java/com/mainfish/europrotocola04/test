@@ -1,0 +1,15 @@
+gen_input_date
+gen_input_time
+gen_input_country
+gen_input_geo
+gen_input_city
+gen_switch_q1
+gen_switch_q2
+gen_switch_q3
+wit1
+wit2
+wit3
+
+gen_input_date	gen_input_time	gen_input_country	gen_input_geo	gen_input_city	gen_switch_q1	gen_switch_q2	gen_switch_q3	wit1	wit2	wit3
+
+Caused by: android.database.sqlite.SQLiteException: near "table1_general": syntax error (code 1):
