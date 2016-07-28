@@ -348,8 +348,6 @@ public class General extends AppCompatActivity {
 		
 	}
 
-
-
     public void getStrings () {
 
         gen_date = setDate.getText().toString();
