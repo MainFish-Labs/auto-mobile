@@ -78,7 +78,7 @@ public class General extends AppCompatActivity {
 //        witList = (TableLayout) findViewById(R.id.wit_list);
 //        buttonWit = (TextView) findViewById(R.id.list_create);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_general);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.accident_general);
         mSlideState = false;
 
         mDrawerLayout.setDrawerListener(new ActionBarDrawerToggle(this,
