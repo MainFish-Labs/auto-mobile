@@ -56,7 +56,7 @@ public class ReadyPage extends AppCompatActivity {
 
         setContentView(R.layout.ready_layout);
 
-	    mDataBaseContainer = new DataBaseContainer(this, "am_protocol_bd.db", null, 1);
+	    mDataBaseContainer = new DataBaseContainer(this, "am_protocol.db", null, 1);
 
 	    mSQLiteDatabase = mDataBaseContainer.getWritableDatabase();
 
@@ -70,7 +70,7 @@ public class ReadyPage extends AppCompatActivity {
     private DataBaseContainer mDataBaseContainer;
     private SQLiteDatabase mSQLiteDatabase;
 
-    public String gen_date = "", gen_date_auto = "", gen_time = "", gen_time_auto = "", gen_country = "", gen_geo = "", gen_city = "";
+    public String gen_date = "", gen_time = "", gen_country = "", gen_geo = "", gen_city = "";
     public String textQ1 = "Нет", textQ2 = "Нет", textQ3 = "Нет", q_text1 = "Нет", q_text2 = "Нет", q_text3 = "Нет";
     public String wit_text1 = "", wit_text2 = "", wit_text3 = "", wit_text4 = "";
 

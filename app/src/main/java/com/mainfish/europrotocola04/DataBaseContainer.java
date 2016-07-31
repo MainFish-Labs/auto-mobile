@@ -14,14 +14,11 @@ import android.util.Log;
 public class DataBaseContainer extends SQLiteOpenHelper implements BaseColumns {
 
     // Имя базы данных
-    private static final String DATABASE_NAME = "am_protocol_db.db";
-    private static final String TABLE_NAME = "am_protocol";
+    private static final String DATABASE_NAME = "am_protocol.db";
+    private static final String TABLE_NAME = "t1_general";
 
     // Версия базы данных
     private static final int DATABASE_VERSION = 1;
-
-    // Имя таблицы
-    private static final String DATABASE_TABLE = "table1_general";
 
     // Названия столбцов
     public static final String T1_DATE = "t1_date";

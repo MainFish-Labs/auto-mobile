@@ -21,6 +21,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -62,10 +63,14 @@ public class General extends AppCompatActivity {
 
 	private DataBaseContainer mDataBaseContainer;
 	private SQLiteDatabase mSQLiteDatabase;
+	private String db_general;
+	private TextView previewGeneral, closePreview;
 
 	public String gen_date, gen_time, gen_country, gen_geo, gen_city;
 	public String q_text1, q_text2, q_text3;
 	public String wit_text1, wit_text2, wit_text3, wit_text4;
+
+	public String[] valuesGen_temp = new String[12];
 
 	public String dataCheckPath;
 	public File dataCheck;
@@ -82,9 +87,7 @@ public class General extends AppCompatActivity {
 
 	    setContentView(R.layout.accident_general);
 
-//	    handleDataBaseGeneral();
-
-	    setFields();
+	    handleDataBaseGeneral();
 
         setUpInfoDrawer();
 
@@ -99,6 +102,12 @@ public class General extends AppCompatActivity {
 		    q_text3 = "Нет";
 
 		    getDateTime();
+
+	    } else {
+
+//		    q_text1 = q_text1_stored;
+//		    q_text2 = q_text2_stored;
+//		    q_text3 = q_text3_stored;
 
 	    }
 
@@ -215,6 +224,8 @@ public class General extends AppCompatActivity {
 
     public void handleSwitchesGeneral () {
 
+	    setFields();
+
 	    final TextView btn_GoToA = (TextView) findViewById(R.id.goto_driverA);
 	    final TextView btn_Impossible = (TextView) findViewById(R.id.btn_impossible);
 	    btn_GoToA.setVisibility(View.VISIBLE);
@@ -226,7 +237,7 @@ public class General extends AppCompatActivity {
 			    0
 	    };
 
-        final SwitchCompat[] controlQ = {
+	    SwitchCompat[] controlQ = {
 		        setQ1,
 		        setQ2,
 		        setQ3
@@ -288,7 +299,7 @@ public class General extends AppCompatActivity {
 
     public void handleDataBaseGeneral () {
 
-        mDataBaseContainer = new DataBaseContainer(this, "am_protocol_db.db", null, 1);
+        mDataBaseContainer = new DataBaseContainer(this, "am_protocol.db", null, 1);
 
         mSQLiteDatabase = mDataBaseContainer.getWritableDatabase();
 
@@ -309,31 +320,54 @@ public class General extends AppCompatActivity {
 
     public void getStrings () {
 
-	    if (isDataBase) {
+	    valuesGen_temp = new String[]{
+			    setDate.getText().toString(),
+			    setTime.getText().toString(),
+			    setPlace.getText().toString(),
+			    setGeo.getText().toString(),
+			    setCity.getText().toString(),
+			    q_text1,
+			    q_text2,
+			    q_text3,
+			    setWit1.getText().toString(),
+			    setWit2.getText().toString(),
+			    setWit3.getText().toString(),
+			    setWit4.getText().toString()
+	    };
 
-		    gen_date = setDate.getText().toString();
-		    gen_time = setTime.getText().toString();
+	    for (int i=0; i < valuesGen_temp.length; i++) {
 
-//		    q_text1 = q_text1_stored;
-//		    q_text2 = q_text2_stored;
-//		    q_text3 = q_text3_stored;
+		    if (valuesGen_temp[i] == null) {
+
+			    valuesGen_temp[i] = "";
+
+		    }
 
 	    }
 
-        gen_country = setPlace.getText().toString();
-        gen_geo = setGeo.getText().toString();
-        gen_city = setCity.getText().toString();
+	    if (!isAutoDateTime) {
 
-        wit_text1 = setWit1.getText().toString();
-        wit_text2 = setWit2.getText().toString();
-        wit_text3 = setWit3.getText().toString();
-        wit_text4 = setWit4.getText().toString();
+		    gen_date = valuesGen_temp[0];
+		    gen_time = valuesGen_temp[1];
+
+	    }
+
+        gen_country = valuesGen_temp[2];
+        gen_geo = valuesGen_temp[3];
+        gen_city = valuesGen_temp[4];
+
+	    q_text1 = valuesGen_temp[5];
+	    q_text2 = valuesGen_temp[6];
+	    q_text3 = valuesGen_temp[7];
+
+        wit_text1 = valuesGen_temp[8];
+        wit_text2 = valuesGen_temp[9];
+        wit_text3 = valuesGen_temp[10];
+        wit_text4 = valuesGen_temp[11];
 
     }
 
     public void t1Value () {
-	
-	    handleCheckFile();
 
         getStrings();
 
@@ -357,12 +391,16 @@ public class General extends AppCompatActivity {
 
         // Вставляем данные в таблицу
 
-        if (!dataCheck.exists()) {
-	        mSQLiteDatabase.insert("am_protocol", null, t1_values);
+        if (!isDataBase) {
 
-	        dataCheckStart();
+	        mSQLiteDatabase.insert(
+			        "am_protocol",
+			        null,
+			        t1_values
+	        );
+
         } else {
-	        handleCheckFile();
+
 	        mSQLiteDatabase.update(
 			        "am_protocol",
 			        t1_values,
@@ -393,6 +431,7 @@ public class General extends AppCompatActivity {
 					        wit_text4
 			        }
 	        );
+
         }
 
     }
@@ -451,30 +490,12 @@ public class General extends AppCompatActivity {
 			wit_text3 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W3));
 			wit_text4 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W4));
 
-			TextView testBaseView = (TextView) findViewById(R.id.testBase);
-			assert testBaseView != null;
-			String db_general = "Дата ДТП " + gen_date + "\nВремя ДТП " + gen_time + "\nСтрана ДТП " + gen_country + "\nМесто ДПТ " + gen_geo + "\nМесто ДТП " + gen_city + "\nПострадавшие? " + q_text1 + "\nВред транспорту? " + q_text2 + "\nВред имуществу? " + q_text3 + "\nСвидетель 1 " + wit_text1 + "\nСвидетель 2 " + wit_text2 + "\nСвидетель 3 " + wit_text3 + "\nСвидетель 4 " + wit_text4;
-			testBaseView.setText(db_general, TextView.BufferType.EDITABLE);
-
 			cursor.close();
 			cursor.moveToFirst();
 
 		}
 
 	}
-
-    public void getBase () {
-
-        t1Value();
-
-		if (!isDataBase) {
-
-			getCursor();
-
-			handleCursor();
-
-		}
-    }
 
 
 	/** Конец Обработка базы данных **/
@@ -487,13 +508,9 @@ public class General extends AppCompatActivity {
 
 		if (dataCheck == null) {
 
-			getDateTime();
-
 			isDataBase = false;
 
 		} else {
-
-			handleCheckFile();
 
 			setDate.setText(gen_date, TextView.BufferType.EDITABLE);
 			setTime.setText(gen_time,TextView.BufferType.EDITABLE);
@@ -505,10 +522,6 @@ public class General extends AppCompatActivity {
 			setWit2.setText(wit_text2, TextView.BufferType.EDITABLE);
 			setWit3.setText(wit_text3, TextView.BufferType.EDITABLE);
 			setWit4.setText(wit_text4, TextView.BufferType.EDITABLE);
-
-			getCursor();
-
-			handleCursor();
 
 			isDataBase = true;
 
@@ -524,7 +537,7 @@ public class General extends AppCompatActivity {
 
     public void gotoMap (View view) {
 
-        getBase();
+	    getPreview();
 
 //        Intent intentMap = new Intent(this, SetLocation.class);
 //        startActivity(intentMap);
@@ -533,7 +546,7 @@ public class General extends AppCompatActivity {
 
     public void gotoDriverA (View view) {
 
-        getBase();
+	    getPreview();
 
         Intent intentDriverA = new Intent(this, DriverA.class);
         startActivity(intentDriverA);
@@ -542,7 +555,7 @@ public class General extends AppCompatActivity {
 
     public void gotoErrorPage (View view) {
 
-        getBase();
+	    getPreview();
 
         Intent intentErrorPage = new Intent(this, PageError.class);
         startActivity(intentErrorPage);
@@ -551,7 +564,7 @@ public class General extends AppCompatActivity {
 
     public void accidentClick (View view) {
 
-        getBase();
+	    getPreview();
 
         Intent intentAccident = new Intent(this, Accident.class);
         startActivity(intentAccident);
@@ -559,9 +572,6 @@ public class General extends AppCompatActivity {
     }
 
     public void btnOpenI (View view) {
-
-        //mDrawerListView = (ListView) findViewById(R.id.info_drawer);
-        //mDrawerListView.setVisibility(View.VISIBLE);
 
         if(mSlideState){
             mDrawerLayout.closeDrawer(GravityCompat.END);
@@ -587,13 +597,19 @@ public class General extends AppCompatActivity {
 		switch (item.getItemId()){
 
 			case R.id.action_settings:
-				return true;
+
+				getPreview();
+				previewGeneral = (TextView) findViewById(R.id.testBase);
+				previewGeneral.setText(db_general, TextView.BufferType.EDITABLE);
+				previewGeneral.setVisibility((previewGeneral.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+				closePreview = (TextView) findViewById(R.id.preview_close);
+				closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
 
 			case R.id.action_clear_db:
-				File dbCheck = new File(dataCheckPath);
-				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol_db.db");
-				boolean delCheck = dbCheck.delete();
-				boolean delSelf = dbSelf.delete();
+//				File dbCheck = new File(dataCheckPath);
+//				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
+//				boolean delCheck = dbCheck.delete();
+//				boolean delSelf = dbSelf.delete();
 				return true;
 
 			default:
@@ -603,23 +619,21 @@ public class General extends AppCompatActivity {
 
     /** Отключено **/
 
-//    public void createList (View view) {
-//
-//        witList.setVisibility((witList.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
-//
-//        if (witList.getVisibility() == View.GONE) {
-//
-//            String createli = "показать список";
-//            buttonWit.setText(createli, TextView.BufferType.EDITABLE);
-//
-//        } else {
-//
-//            String createli = "скрыть список";
-//            buttonWit.setText(createli, TextView.BufferType.EDITABLE);
-//
-//        }
-//
-//    }
+    public void getPreview () {
+
+	    getStrings();
+
+	    assert previewGeneral != null;
+	    db_general = "Дата ДТП:    " + gen_date + "\nВремя ДТП:    " + gen_time + "\nСтрана ДТП:    " + gen_country + "\nМесто ДПТ:    " + gen_geo + "\nМесто ДТП:    " + gen_city + "\nПострадавшие?    " + q_text1 + "\nВред транспорту?    " + q_text2 + "\nВред имуществу?    " + q_text3 + "\nСвидетель 1:    " + wit_text1 + "\nСвидетель 2:    " + wit_text2 + "\nСвидетель 3:    " + wit_text3 + "\nСвидетель 4:   " + wit_text4;
+
+    }
+
+	public void closePreview (View view) {
+
+		previewGeneral.setVisibility((previewGeneral.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+		closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+
+	}
 
 //    public void showGeneral (View view) {
 //

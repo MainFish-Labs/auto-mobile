@@ -72,7 +72,7 @@
                 android:paddingTop="6dp"
                 android:onClick="gotoDriverA"
                 android:paddingRight="2dp" />
-            
+
         </TableRow>
 
     </TableLayout>
@@ -106,7 +106,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="58dp"
         android:background="@android:color/white"
-        android:layout_marginBottom="44dp">
+        android:layout_marginBottom="44dp"
+        android:id="@+id/tableLayout3">
 
         <TableRow
             android:paddingEnd="8dp"
@@ -215,12 +216,30 @@
         android:layout_marginBottom="10dp"
         android:onClick="btnOpenI" />
 
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/testBase"
+            android:background="@drawable/back_button_gray"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:gravity="left|top"
+            android:padding="20dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/testBase" />
+        android:text="@string/close"
+        android:id="@+id/preview_close"
+        android:layout_alignTop="@+id/testBase"
+        android:layout_alignRight="@+id/testBase"
+        android:padding="3dp"
+        android:onClick="closePreview"
+        android:visibility="gone"
+        android:textColor="@color/colorText"
+        style="@style/text_circum" />
 
 </RelativeLayout>
 
