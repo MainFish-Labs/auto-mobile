@@ -37,21 +37,43 @@ import java.util.Calendar;
 
 public class General extends AppCompatActivity {
 
-	public EditText setDate = (EditText) findViewById(R.id.gen_input_date);
-	public EditText setTime = (EditText) findViewById(R.id.gen_input_time);
+	/** Переменные полей ввода */
 
-	public TextView setPlace = (TextView) findViewById(R.id.gen_input_country);
-	public EditText setGeo = (EditText) findViewById(R.id.gen_input_geo);
-	public EditText setCity = (EditText) findViewById(R.id.gen_input_city);
+	public EditText setDate;
+	public EditText setTime;
 
-	public SwitchCompat setQ1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
-	public SwitchCompat setQ2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
-	public SwitchCompat setQ3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
+	public TextView setPlace;
+	public EditText setGeo;
+	public EditText setCity;
 
-	public EditText setWit1 = (EditText) findViewById(R.id.wit1);
-	public EditText setWit2 = (EditText) findViewById(R.id.wit2);
-	public EditText setWit3 = (EditText) findViewById(R.id.wit3);
-	public EditText setWit4 = (EditText) findViewById(R.id.wit4);
+	public SwitchCompat setQ1;
+	public SwitchCompat setQ2;
+	public SwitchCompat setQ3;
+
+	public EditText setWit1;
+	public EditText setWit2;
+	public EditText setWit3;
+	public EditText setWit4;
+
+	/** Переменные базы данных */
+
+	public Cursor cursor; // !!!!
+	public boolean isDataBase;
+
+	private DataBaseContainer mDataBaseContainer;
+	private SQLiteDatabase mSQLiteDatabase;
+
+	public String gen_date, gen_time, gen_country, gen_geo, gen_city;
+	public String q_text1, q_text2, q_text3;
+	public String wit_text1, wit_text2, wit_text3, wit_text4;
+
+	public String dataCheckPath;
+	public File dataCheck;
+
+	public String dataCheckDir = "/am_cache/";
+	public String dataCheckFile = dataCheckDir + "base.txt";
+
+	public File sdDir;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -62,15 +84,49 @@ public class General extends AppCompatActivity {
 
 //	    handleDataBaseGeneral();
 
-//      setUpInfoDrawer();
-//
+	    setFields();
+
+        setUpInfoDrawer();
+
         handleSwitchesGeneral();
-//
+
 //	    fillStored();
 
-	    getDateTime();
+	    if (!isDataBase) {
+
+		    q_text1 = "Нет";
+		    q_text2 = "Нет";
+		    q_text3 = "Нет";
+
+		    getDateTime();
+
+	    }
 
     }
+
+
+
+	/** Инициализация полей ввода **/
+
+	public void setFields () {
+
+		setDate = (EditText) findViewById(R.id.gen_input_date);
+		setTime = (EditText) findViewById(R.id.gen_input_time);
+
+		setPlace = (TextView) findViewById(R.id.gen_input_country);
+		setGeo = (EditText) findViewById(R.id.gen_input_geo);
+		setCity = (EditText) findViewById(R.id.gen_input_city);
+
+		setQ1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
+		setQ2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
+		setQ3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
+
+		setWit1 = (EditText) findViewById(R.id.wit1);
+		setWit2 = (EditText) findViewById(R.id.wit2);
+		setWit3 = (EditText) findViewById(R.id.wit3);
+		setWit4 = (EditText) findViewById(R.id.wit4);
+
+	}
 
 
 
@@ -118,6 +174,8 @@ public class General extends AppCompatActivity {
 
     /** Дата и время **/
 
+    public boolean isAutoDateTime;
+
     public void getDateTime () {
 
         Calendar c = Calendar.getInstance();
@@ -143,6 +201,8 @@ public class General extends AppCompatActivity {
         gen_date = dt_values[0] + "." + dt_values[1] + "." + dt_values[2];
         gen_time = dt_values[3] + ":" + dt_values[4];
 
+	    isAutoDateTime = true;
+
     }
 
     /** Конец Дата и время **/
@@ -166,7 +226,7 @@ public class General extends AppCompatActivity {
 			    0
 	    };
 
-        SwitchCompat[] controlQ = {
+        final SwitchCompat[] controlQ = {
 		        setQ1,
 		        setQ2,
 		        setQ3
@@ -187,7 +247,7 @@ public class General extends AppCompatActivity {
 			    @Override
 			    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				    Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
-						    "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : textQ[j] + "Нет"),Toast.LENGTH_LONG).show();
+						    "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : textQ[j] + "Нет"),Toast.LENGTH_SHORT).show();
 
 				    if (isChecked) {
 					    countQ[j]=1;
@@ -226,24 +286,6 @@ public class General extends AppCompatActivity {
 
     /** Обработка базы данных */
 
-    public Cursor cursor; // !!!!
-    public boolean isDataBase;
-
-    private DataBaseContainer mDataBaseContainer;
-    private SQLiteDatabase mSQLiteDatabase;
-
-    public String gen_date = "", gen_time = "", gen_country = "", gen_geo = "", gen_city = "";
-    public String q_text1 = "Нет", q_text2 = "Нет", q_text3 = "Нет";
-    public String wit_text1 = "", wit_text2 = "", wit_text3 = "", wit_text4 = "";
-
-	public String dataCheckPath;
-	public File dataCheck;
-
-	public String dataCheckDir = "/am_cache/";
-	public String dataCheckFile = dataCheckDir + "base.txt";
-
-	public File sdDir;
-
     public void handleDataBaseGeneral () {
 
         mDataBaseContainer = new DataBaseContainer(this, "am_protocol_db.db", null, 1);
@@ -267,8 +309,17 @@ public class General extends AppCompatActivity {
 
     public void getStrings () {
 
-        gen_date = setDate.getText().toString();
-        gen_time = setTime.getText().toString();
+	    if (isDataBase) {
+
+		    gen_date = setDate.getText().toString();
+		    gen_time = setTime.getText().toString();
+
+//		    q_text1 = q_text1_stored;
+//		    q_text2 = q_text2_stored;
+//		    q_text3 = q_text3_stored;
+
+	    }
+
         gen_country = setPlace.getText().toString();
         gen_geo = setGeo.getText().toString();
         gen_city = setCity.getText().toString();
