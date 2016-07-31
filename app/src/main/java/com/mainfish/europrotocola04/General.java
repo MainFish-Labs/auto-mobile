@@ -259,9 +259,9 @@ public class General extends AppCompatActivity {
     public TextView setPlace;
     public EditText setGeo;
     public EditText setCity;
-    public Switch setQ1;
-    public Switch setQ2;
-    public Switch setQ3;
+    public SwitchCompat setQ1;
+    public SwitchCompat setQ2;
+    public SwitchCompat setQ3;
     public EditText Witness1;
     public EditText Witness2;
     public EditText Witness3;
@@ -292,9 +292,9 @@ public class General extends AppCompatActivity {
         setGeo = (EditText) findViewById(R.id.gen_input_geo);
         setCity = (EditText) findViewById(R.id.gen_input_city);
 
-        setQ1 = (Switch) findViewById(R.id.gen_show_q1);
-        setQ2 = (Switch) findViewById(R.id.gen_show_q2);
-        setQ3 = (Switch) findViewById(R.id.gen_show_q3);
+        setQ1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
+        setQ2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
+        setQ3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
 
         Witness1 = (EditText) findViewById(R.id.wit1);
         Witness2 = (EditText) findViewById(R.id.wit2);
