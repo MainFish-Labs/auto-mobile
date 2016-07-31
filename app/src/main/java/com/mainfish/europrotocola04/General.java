@@ -44,13 +44,15 @@ public class General extends AppCompatActivity {
 
 	    setContentView(R.layout.accident_general);
 
-	    handleDataBaseGeneral();
+//	    handleDataBaseGeneral();
+//
+//        setUpInfoDrawer();
+//
+//        handleSwitchesGeneral();
+//
+//	    fillStored();
 
-        setUpInfoDrawer();
-
-        handleSwitchesGeneral();
-
-	    fillStored();
+	    getDateTime();
 
     }
 
@@ -108,56 +110,26 @@ public class General extends AppCompatActivity {
 
         Calendar c = Calendar.getInstance();
 
-        int day = c.get(Calendar.DATE);
-        String dayX;
+        int[] dt = {
+		        c.get(Calendar.DATE),
+		        (c.get(Calendar.MONTH) + 1),
+		        c.get(Calendar.YEAR),
+		        c.get(Calendar.HOUR_OF_DAY),
+		        c.get(Calendar.MINUTE),
+        };
 
-        if (day < 10) {
-            dayX = "0" + day;
-        } else {
-            dayX = String.valueOf(day);
+        String[] dt_values = new String[5];
+
+        for (int i=0; i < dt.length; i++) {
+	        if (dt[i] < 10) {
+		        dt_values[i] = "0" + dt[i];
+	        } else {
+		        dt_values[i] = String.valueOf(dt[i]);
+	        }
         }
 
-        int month = (c.get(Calendar.MONTH)+ 1);
-        String monthX;
-
-        if (month < 10) {
-            monthX = "0" + month;
-        } else {
-            monthX = String.valueOf(month);
-        }
-
-        int year = c.get(Calendar.YEAR);
-        String yearX;
-
-        if (year < 10) {
-            yearX = "0" + year;
-        } else {
-            yearX = String.valueOf(year);
-        }
-
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        String hourX;
-
-        if (hour < 10) {
-            hourX = "0" + hour;
-        } else {
-            hourX = String.valueOf(hour);
-        }
-
-        int minute = c.get(Calendar.MINUTE);
-        String minuteX;
-
-        if (minute < 10) {
-            minuteX = "0" + minute;
-        } else {
-            minuteX = String.valueOf(minute);
-        }
-
-        gen_date_auto = dayX + "." + monthX + "." + yearX;
-        gen_time_auto = hourX + ":" + minuteX;
-
-	    gen_date = gen_date_auto;
-	    gen_time = gen_time_auto;
+        gen_date = dt_values[0] + "." + dt_values[1] + "." + dt_values[2];
+        gen_time = dt_values[3] + ":" + dt_values[4];
 
     }
 
