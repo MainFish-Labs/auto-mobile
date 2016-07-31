@@ -37,6 +37,22 @@ import java.util.Calendar;
 
 public class General extends AppCompatActivity {
 
+	public EditText setDate = (EditText) findViewById(R.id.gen_input_date);
+	public EditText setTime = (EditText) findViewById(R.id.gen_input_time);
+
+	public TextView setPlace = (TextView) findViewById(R.id.gen_input_country);
+	public EditText setGeo = (EditText) findViewById(R.id.gen_input_geo);
+	public EditText setCity = (EditText) findViewById(R.id.gen_input_city);
+
+	public SwitchCompat setQ1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
+	public SwitchCompat setQ2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
+	public SwitchCompat setQ3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
+
+	public EditText setWit1 = (EditText) findViewById(R.id.wit1);
+	public EditText setWit2 = (EditText) findViewById(R.id.wit2);
+	public EditText setWit3 = (EditText) findViewById(R.id.wit3);
+	public EditText setWit4 = (EditText) findViewById(R.id.wit4);
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
 
@@ -45,10 +61,10 @@ public class General extends AppCompatActivity {
 	    setContentView(R.layout.accident_general);
 
 //	    handleDataBaseGeneral();
+
+//      setUpInfoDrawer();
 //
-//        setUpInfoDrawer();
-//
-//        handleSwitchesGeneral();
+        handleSwitchesGeneral();
 //
 //	    fillStored();
 
@@ -75,10 +91,6 @@ public class General extends AppCompatActivity {
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.info_drawer_layout, infoText));
-
-
-//        witList = (TableLayout) findViewById(R.id.wit_list);
-//        buttonWit = (TextView) findViewById(R.id.list_create);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.accident_general);
         mSlideState = false;
@@ -139,110 +151,72 @@ public class General extends AppCompatActivity {
 
     /** Обработка свитчей */
 
-    public int countQ1 = 0, countQ2 = 0, countQ3 = 0;
+    public int counter;
 
     public void handleSwitchesGeneral () {
 
-        final TextView btn_GoToA = (TextView) findViewById(R.id.goto_driverA);
-        final TextView btn_Impossible = (TextView) findViewById(R.id.btn_impossible);
-        btn_GoToA.setVisibility(View.VISIBLE);
-        btn_Impossible.setVisibility(View.GONE);
+	    final TextView btn_GoToA = (TextView) findViewById(R.id.goto_driverA);
+	    final TextView btn_Impossible = (TextView) findViewById(R.id.btn_impossible);
+	    btn_GoToA.setVisibility(View.VISIBLE);
+	    btn_Impossible.setVisibility(View.GONE);
 
-        SwitchCompat control_question_1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
-        SwitchCompat control_question_2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
-        SwitchCompat control_question_3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
+	    final int[] countQ = {
+			    0,
+			    0,
+			    0
+	    };
 
-        assert control_question_1 != null;
-        control_question_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
-                        "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : "Пострадавшие люди - " + "Нет"),Toast.LENGTH_LONG).show();
+        SwitchCompat[] controlQ = {
+		        setQ1,
+		        setQ2,
+		        setQ3
+        };
 
-                if (isChecked) {
-                    countQ1=1;
-                } else {
-                    countQ1=0;
-                }
+	    final String[] textQ = {
+			    "Пострадавшие люди - ",
+			    "Материальный вред прочим ТС - ",
+			    "Материальный вред другому имуществу - "
+	    };
 
-                if ((countQ1 == 1) || (countQ2 == 1) || (countQ3 == 1)) {
+	    final String[] answerQ = new String[3];
 
-                    btn_GoToA.setVisibility(View.GONE);
-                    btn_Impossible.setVisibility(View.VISIBLE);
-                    textQ1 = "Да";
+	    for (counter=0; counter < countQ.length; counter++) {
 
-                } else {
+		    controlQ[counter].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			    int j = counter;
+			    @Override
+			    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				    Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
+						    "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : textQ[j] + "Нет"),Toast.LENGTH_LONG).show();
 
-                    btn_Impossible.setVisibility(View.GONE);
-                    btn_GoToA.setVisibility(View.VISIBLE);
-                    textQ1 = "Нет";
+				    if (isChecked) {
+					    countQ[j]=1;
+				    } else {
+					    countQ[j]=0;
+				    }
 
-                }
+				    if ((countQ[0] == 1) || (countQ[1] == 1) || (countQ[2] == 1)) {
 
-            }
-        });
+					    btn_GoToA.setVisibility(View.GONE);
+					    btn_Impossible.setVisibility(View.VISIBLE);
+					    answerQ[j] = "Да";
 
+				    } else {
 
-        assert control_question_2 != null;
-        control_question_2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
-                        "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : "Материальный вред прочим ТС - " + "Нет"),Toast.LENGTH_LONG).show();
+					    btn_Impossible.setVisibility(View.GONE);
+					    btn_GoToA.setVisibility(View.VISIBLE);
+					    answerQ[j] = "Нет";
 
-                if (isChecked) {
-                    countQ2=1;
-                } else {
-                    countQ2=0;
-                }
+				    }
 
-                if ((countQ1 == 1) || (countQ2 == 1) || (countQ3 == 1)) {
+			    }
+		    });
 
-                    btn_GoToA.setVisibility(View.GONE);
-                    btn_Impossible.setVisibility(View.VISIBLE);
-                    textQ2 = "Да";
+	    }
 
-                } else {
-
-                    btn_Impossible.setVisibility(View.GONE);
-                    btn_GoToA.setVisibility(View.VISIBLE);
-                    textQ2 = "Нет";
-
-                }
-
-            }
-        });
-
-
-        assert control_question_3 != null;
-        control_question_3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
-                        "(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : "Материальный вред другому имуществу - " + "Нет"),Toast.LENGTH_LONG).show();
-
-                if (isChecked) {
-                    countQ3=1;
-                } else {
-                    countQ3=0;
-                }
-
-                if ((countQ1 == 1) || (countQ2 == 1) || (countQ3 == 1)) {
-
-                    btn_GoToA.setVisibility(View.GONE);
-                    btn_Impossible.setVisibility(View.VISIBLE);
-                    textQ3 = "Да";
-
-                } else {
-
-                    btn_Impossible.setVisibility(View.GONE);
-                    btn_GoToA.setVisibility(View.VISIBLE);
-                    textQ3 = "Нет";
-
-                }
-
-            }
-        });
+	    q_text1 = answerQ[0];
+	    q_text2 = answerQ[1];
+	    q_text3 = answerQ[2];
 
     }
 
@@ -253,26 +227,13 @@ public class General extends AppCompatActivity {
     /** Обработка базы данных */
 
     public Cursor cursor; // !!!!
-
-    public EditText setDate;
-    public EditText setTime;
-    public TextView setPlace;
-    public EditText setGeo;
-    public EditText setCity;
-    public SwitchCompat setQ1;
-    public SwitchCompat setQ2;
-    public SwitchCompat setQ3;
-    public EditText Witness1;
-    public EditText Witness2;
-    public EditText Witness3;
-    public EditText Witness4;
     public boolean isDataBase;
 
     private DataBaseContainer mDataBaseContainer;
     private SQLiteDatabase mSQLiteDatabase;
 
-    public String gen_date = "", gen_date_auto = "", gen_time = "", gen_time_auto = "", gen_country = "", gen_geo = "", gen_city = "";
-    public String textQ1 = "Нет", textQ2 = "Нет", textQ3 = "Нет", q_text1 = "Нет", q_text2 = "Нет", q_text3 = "Нет";
+    public String gen_date = "", gen_time = "", gen_country = "", gen_geo = "", gen_city = "";
+    public String q_text1 = "Нет", q_text2 = "Нет", q_text3 = "Нет";
     public String wit_text1 = "", wit_text2 = "", wit_text3 = "", wit_text4 = "";
 
 	public String dataCheckPath;
@@ -284,22 +245,6 @@ public class General extends AppCompatActivity {
 	public File sdDir;
 
     public void handleDataBaseGeneral () {
-
-        setDate = (EditText) findViewById(R.id.gen_input_date);
-        setTime = (EditText) findViewById(R.id.gen_input_time);
-
-        setPlace = (TextView) findViewById(R.id.gen_input_country);
-        setGeo = (EditText) findViewById(R.id.gen_input_geo);
-        setCity = (EditText) findViewById(R.id.gen_input_city);
-
-        setQ1 = (SwitchCompat) findViewById(R.id.gen_switch_q1);
-        setQ2 = (SwitchCompat) findViewById(R.id.gen_switch_q2);
-        setQ3 = (SwitchCompat) findViewById(R.id.gen_switch_q3);
-
-        Witness1 = (EditText) findViewById(R.id.wit1);
-        Witness2 = (EditText) findViewById(R.id.wit2);
-        Witness3 = (EditText) findViewById(R.id.wit3);
-        Witness4 = (EditText) findViewById(R.id.wit4);
 
         mDataBaseContainer = new DataBaseContainer(this, "am_protocol_db.db", null, 1);
 
@@ -328,14 +273,10 @@ public class General extends AppCompatActivity {
         gen_geo = setGeo.getText().toString();
         gen_city = setCity.getText().toString();
 
-        q_text1 = textQ1;
-        q_text2 = textQ2;
-        q_text3 = textQ3;
-
-        wit_text1 = Witness1.getText().toString();
-        wit_text2 = Witness2.getText().toString();
-        wit_text3 = Witness3.getText().toString();
-        wit_text4 = Witness4.getText().toString();
+        wit_text1 = setWit1.getText().toString();
+        wit_text2 = setWit2.getText().toString();
+        wit_text3 = setWit3.getText().toString();
+        wit_text4 = setWit4.getText().toString();
 
     }
 
@@ -509,10 +450,10 @@ public class General extends AppCompatActivity {
 			setGeo.setText(gen_geo, TextView.BufferType.EDITABLE);
 			setCity.setText(gen_city, TextView.BufferType.EDITABLE);
 
-			Witness1.setText(wit_text1, TextView.BufferType.EDITABLE);
-			Witness2.setText(wit_text2, TextView.BufferType.EDITABLE);
-			Witness3.setText(wit_text3, TextView.BufferType.EDITABLE);
-			Witness4.setText(wit_text4, TextView.BufferType.EDITABLE);
+			setWit1.setText(wit_text1, TextView.BufferType.EDITABLE);
+			setWit2.setText(wit_text2, TextView.BufferType.EDITABLE);
+			setWit3.setText(wit_text3, TextView.BufferType.EDITABLE);
+			setWit4.setText(wit_text4, TextView.BufferType.EDITABLE);
 
 			getCursor();
 
