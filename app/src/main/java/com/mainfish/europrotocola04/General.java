@@ -2,6 +2,7 @@ package com.mainfish.europrotocola04;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,6 +29,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
@@ -58,7 +61,7 @@ public class General extends AppCompatActivity {
 
 	/** Переменные базы данных */
 
-	public Cursor cursor; // !!!!
+	public Cursor t1_cursor; // !!!!
 	public boolean isDataBase;
 
 	private DataBaseContainer mDataBaseContainer;
@@ -72,13 +75,9 @@ public class General extends AppCompatActivity {
 
 	public String[] valuesGen_temp = new String[12];
 
-	public String dataCheckPath;
-	public File dataCheck;
-
-	public String dataCheckDir = "/am_cache/";
-	public String dataCheckFile = dataCheckDir + "base.txt";
-
-	public File sdDir;
+	public File dataCheckFile;
+	public File sdDir = android.os.Environment.getExternalStorageDirectory();
+	public String dataCheckPath = "/am_cache5/db.exist";
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -89,11 +88,7 @@ public class General extends AppCompatActivity {
 
 	    handleDataBaseGeneral();
 
-        setUpInfoDrawer();
-
-        handleSwitchesGeneral();
-
-//	    fillStored();
+	    checkDataBase();
 
 	    if (!isDataBase) {
 
@@ -105,11 +100,13 @@ public class General extends AppCompatActivity {
 
 	    } else {
 
-//		    q_text1 = q_text1_stored;
-//		    q_text2 = q_text2_stored;
-//		    q_text3 = q_text3_stored;
+		    getStored();
 
 	    }
+
+        setUpInfoDrawer();
+
+        handleSwitchesGeneral();
 
     }
 
@@ -212,6 +209,9 @@ public class General extends AppCompatActivity {
 
 	    isAutoDateTime = true;
 
+	    setDate.setText(gen_date, TextView.BufferType.EDITABLE);
+	    setTime.setText(gen_time,TextView.BufferType.EDITABLE);
+
     }
 
     /** Конец Дата и время **/
@@ -223,8 +223,6 @@ public class General extends AppCompatActivity {
     public int counter;
 
     public void handleSwitchesGeneral () {
-
-	    setFields();
 
 	    final TextView btn_GoToA = (TextView) findViewById(R.id.goto_driverA);
 	    final TextView btn_Impossible = (TextView) findViewById(R.id.btn_impossible);
@@ -283,11 +281,11 @@ public class General extends AppCompatActivity {
 			    }
 		    });
 
-	    }
+		    q_text1 = answerQ[0];
+		    q_text2 = answerQ[1];
+		    q_text3 = answerQ[2];
 
-	    q_text1 = answerQ[0];
-	    q_text2 = answerQ[1];
-	    q_text3 = answerQ[2];
+	    }
 
     }
 
@@ -303,19 +301,52 @@ public class General extends AppCompatActivity {
 
         mSQLiteDatabase = mDataBaseContainer.getWritableDatabase();
 
+	    setFields();
+
     }
 	
-	public void handleCheckFile () {
+	public void checkFileCreate () {
 		
 		String sdState = android.os.Environment.getExternalStorageState();
 		if (sdState.equals(android.os.Environment.MEDIA_MOUNTED)) {
-			sdDir = android.os.Environment.getExternalStorageDirectory();
-			dataCheck = new File(sdDir, dataCheckFile);
-			dataCheckPath = sdDir + dataCheckFile;
+			dataCheckFile = new File(sdDir, dataCheckPath);
 		} else {
-			dataCheck = getApplicationContext().getCacheDir();
+			dataCheckFile = getApplicationContext().getCacheDir();
+		}
+
+		if (!dataCheckFile.exists()) {
+			dataCheckFile.mkdirs();
+		}
+
+		FileOutputStream fos;
+		try {
+			fos = openFileOutput("db.exist", Context.MODE_PRIVATE); // открываем файл для записи
+			fos.write("database exist".getBytes()); // записываем данные
+			fos.close(); // закрываем файл
+			isDataBase = true;
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
+	}
+
+	public void checkDataBase () {
+
+		String Path = sdDir + dataCheckPath;
+
+		File isExist = new File(Path, "/db.exist");
+
+		if (isExist.exists()) {
+			isDataBase = true;
+		} else {
+			isDataBase = false;
+		}
+
 	}
 
     public void getStrings () {
@@ -336,20 +367,14 @@ public class General extends AppCompatActivity {
 	    };
 
 	    for (int i=0; i < valuesGen_temp.length; i++) {
-
 		    if (valuesGen_temp[i] == null) {
-
 			    valuesGen_temp[i] = "";
-
 		    }
-
 	    }
 
 	    if (!isAutoDateTime) {
-
 		    gen_date = valuesGen_temp[0];
 		    gen_time = valuesGen_temp[1];
-
 	    }
 
         gen_country = valuesGen_temp[2];
@@ -367,9 +392,17 @@ public class General extends AppCompatActivity {
 
     }
 
-    public void t1Value () {
+    public void getBase () {
 
-        getStrings();
+	    getValues();
+
+	    getPreview();
+
+    }
+
+	public void getValues () {
+
+		getStrings();
 
         ContentValues t1_values = new ContentValues();
 
@@ -398,6 +431,7 @@ public class General extends AppCompatActivity {
 			        null,
 			        t1_values
 	        );
+	        checkFileCreate();
 
         } else {
 
@@ -436,64 +470,10 @@ public class General extends AppCompatActivity {
 
     }
 
-	public void dataCheckStart () {
+	public void getPreview () {
 
-		if (!dataCheck.exists())
-			dataCheck.mkdirs();
-		try {
-			FileWriter f = new FileWriter(dataCheck);
-			f.write("database exist");
-			f.flush();
-			f.close();
-		} catch (Exception e) {
-			return;
-		}
-
-	}
-
-	public void getCursor () {
-
-		cursor = mSQLiteDatabase.query("am_protocol", new String[] {
-				DataBaseContainer.T1_DATE,
-				DataBaseContainer.T1_TIME,
-				DataBaseContainer.T1_COUNTRY,
-				DataBaseContainer.T1_GEO,
-				DataBaseContainer.T1_M_PLACE,
-				DataBaseContainer.T1_Q1,
-				DataBaseContainer.T1_Q2,
-				DataBaseContainer.T1_Q3,
-				DataBaseContainer.T1_W1,
-				DataBaseContainer.T1_W2,
-				DataBaseContainer.T1_W3,
-				DataBaseContainer.T1_W4
-			},
-			null, null, null, null, null);
-
-	}
-
-	public void handleCursor () {
-
-		cursor.moveToFirst();
-		if(cursor.moveToFirst() ) {
-			gen_date = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_DATE));
-			gen_time = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_TIME));
-			gen_country = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_COUNTRY));
-			gen_geo = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_GEO));
-			gen_city = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_M_PLACE));
-
-			q_text1 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_Q1));
-			q_text2 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_Q2));
-			q_text3 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_Q3));
-
-			wit_text1 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W1));
-			wit_text2 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W2));
-			wit_text3 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W3));
-			wit_text4 = cursor.getString(cursor.getColumnIndex(DataBaseContainer.T1_W4));
-
-			cursor.close();
-			cursor.moveToFirst();
-
-		}
+		assert previewGeneral != null;
+		db_general = "Дата ДТП:    " + gen_date + "\nВремя ДТП:    " + gen_time + "\nСтрана ДТП:    " + gen_country + "\nМесто ДПТ:    " + gen_geo + "\nМесто ДТП:    " + gen_city + "\nПострадавшие?    " + q_text1 + "\nВред транспорту?    " + q_text2 + "\nВред имуществу?    " + q_text3 + "\nСвидетель 1:    " + wit_text1 + "\nСвидетель 2:    " + wit_text2 + "\nСвидетель 3:    " + wit_text3 + "\nСвидетель 4:   " + wit_text4;
 
 	}
 
@@ -504,28 +484,78 @@ public class General extends AppCompatActivity {
 
 	/** Вставка сохранённых значений **/
 
-	public void fillStored () {
+	public void getStored () {
 
-		if (dataCheck == null) {
+		t1_cursor = mSQLiteDatabase.query("am_protocol", new String[] {
+						DataBaseContainer.T1_DATE,
+						DataBaseContainer.T1_TIME,
+						DataBaseContainer.T1_COUNTRY,
+						DataBaseContainer.T1_GEO,
+						DataBaseContainer.T1_M_PLACE,
+						DataBaseContainer.T1_Q1,
+						DataBaseContainer.T1_Q2,
+						DataBaseContainer.T1_Q3,
+						DataBaseContainer.T1_W1,
+						DataBaseContainer.T1_W2,
+						DataBaseContainer.T1_W3,
+						DataBaseContainer.T1_W4
+				},
+				null, null, null, null, null);
 
-			isDataBase = false;
+		t1_cursor.moveToFirst();
 
-		} else {
+		String[] inputGen_temp = {
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_DATE)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_TIME)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_COUNTRY)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_GEO)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_M_PLACE)),
 
-			setDate.setText(gen_date, TextView.BufferType.EDITABLE);
-			setTime.setText(gen_time,TextView.BufferType.EDITABLE);
-			setPlace.setText(gen_country, TextView.BufferType.EDITABLE);
-			setGeo.setText(gen_geo, TextView.BufferType.EDITABLE);
-			setCity.setText(gen_city, TextView.BufferType.EDITABLE);
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q1)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q2)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q3)),
 
-			setWit1.setText(wit_text1, TextView.BufferType.EDITABLE);
-			setWit2.setText(wit_text2, TextView.BufferType.EDITABLE);
-			setWit3.setText(wit_text3, TextView.BufferType.EDITABLE);
-			setWit4.setText(wit_text4, TextView.BufferType.EDITABLE);
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W1)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W2)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W3)),
+				t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W4))
+		};
 
-			isDataBase = true;
+		t1_cursor.close();
+		t1_cursor.moveToFirst();
 
+		setDate.setText(inputGen_temp[0], TextView.BufferType.EDITABLE);
+		setTime.setText(inputGen_temp[1],TextView.BufferType.EDITABLE);
+		setPlace.setText(inputGen_temp[2], TextView.BufferType.EDITABLE);
+		setGeo.setText(inputGen_temp[3], TextView.BufferType.EDITABLE);
+		setCity.setText(inputGen_temp[4], TextView.BufferType.EDITABLE);
+
+		q_text1 = inputGen_temp[5];
+		q_text2 = inputGen_temp[6];
+		q_text3 = inputGen_temp[7];
+
+		SwitchCompat[] setQ_temp = new SwitchCompat[3];
+
+		boolean[] checkBool = new boolean[3];
+
+		for (int i=0; i < setQ_temp.length; i++) {
+			if (inputGen_temp[(5+i)] == "Да") {
+				checkBool[i] = true;
+			} else {
+				checkBool[i] = false;
+			}
+			setQ_temp[i].setChecked(checkBool[i]);
 		}
+
+
+		setQ1 = setQ_temp[0];
+		setQ2 = setQ_temp[1];
+		setQ3 = setQ_temp[2];
+
+		setWit1.setText(inputGen_temp[8], TextView.BufferType.EDITABLE);
+		setWit2.setText(inputGen_temp[9], TextView.BufferType.EDITABLE);
+		setWit3.setText(inputGen_temp[10], TextView.BufferType.EDITABLE);
+		setWit4.setText(inputGen_temp[11], TextView.BufferType.EDITABLE);
 
 	}
 
@@ -537,7 +567,7 @@ public class General extends AppCompatActivity {
 
     public void gotoMap (View view) {
 
-	    getPreview();
+	    getBase();
 
 //        Intent intentMap = new Intent(this, SetLocation.class);
 //        startActivity(intentMap);
@@ -546,7 +576,7 @@ public class General extends AppCompatActivity {
 
     public void gotoDriverA (View view) {
 
-	    getPreview();
+	    getBase();
 
         Intent intentDriverA = new Intent(this, DriverA.class);
         startActivity(intentDriverA);
@@ -555,7 +585,7 @@ public class General extends AppCompatActivity {
 
     public void gotoErrorPage (View view) {
 
-	    getPreview();
+	    getBase();
 
         Intent intentErrorPage = new Intent(this, PageError.class);
         startActivity(intentErrorPage);
@@ -564,7 +594,7 @@ public class General extends AppCompatActivity {
 
     public void accidentClick (View view) {
 
-	    getPreview();
+	    getBase();
 
         Intent intentAccident = new Intent(this, Accident.class);
         startActivity(intentAccident);
@@ -581,8 +611,6 @@ public class General extends AppCompatActivity {
 
     }
 
-    /** Конец Кнопки **/
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -598,35 +626,28 @@ public class General extends AppCompatActivity {
 
 			case R.id.action_settings:
 
-				getPreview();
+				getBase();
 				previewGeneral = (TextView) findViewById(R.id.testBase);
 				previewGeneral.setText(db_general, TextView.BufferType.EDITABLE);
 				previewGeneral.setVisibility((previewGeneral.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
 				closePreview = (TextView) findViewById(R.id.preview_close);
 				closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+				Toast.makeText(getApplicationContext(),
+						"Предварительный просмотр", Toast.LENGTH_SHORT).show();
 
 			case R.id.action_clear_db:
-//				File dbCheck = new File(dataCheckPath);
-//				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
-//				boolean delCheck = dbCheck.delete();
-//				boolean delSelf = dbSelf.delete();
-				return true;
+				File dbCheck = new File(dataCheckPath, "/db.exist");
+				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
+				boolean delCheck = dbCheck.delete();
+				boolean delSelf = dbSelf.delete();
+				isDataBase = false;
+				Toast.makeText(getApplicationContext(),
+						"База данных очищена", Toast.LENGTH_SHORT).show();
 
 			default:
 				return super.onOptionsItemSelected(item);
 		}
 	}
-
-    /** Отключено **/
-
-    public void getPreview () {
-
-	    getStrings();
-
-	    assert previewGeneral != null;
-	    db_general = "Дата ДТП:    " + gen_date + "\nВремя ДТП:    " + gen_time + "\nСтрана ДТП:    " + gen_country + "\nМесто ДПТ:    " + gen_geo + "\nМесто ДТП:    " + gen_city + "\nПострадавшие?    " + q_text1 + "\nВред транспорту?    " + q_text2 + "\nВред имуществу?    " + q_text3 + "\nСвидетель 1:    " + wit_text1 + "\nСвидетель 2:    " + wit_text2 + "\nСвидетель 3:    " + wit_text3 + "\nСвидетель 4:   " + wit_text4;
-
-    }
 
 	public void closePreview (View view) {
 
@@ -634,6 +655,12 @@ public class General extends AppCompatActivity {
 		closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
 
 	}
+
+	/** Конец Кнопки **/
+
+
+
+	/** Отключено **/
 
 //    public void showGeneral (View view) {
 //
