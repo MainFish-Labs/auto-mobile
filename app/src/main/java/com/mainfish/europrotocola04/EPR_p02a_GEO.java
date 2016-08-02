@@ -27,7 +27,7 @@ public class EPR_p02a_GEO extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.location_activity);
+        setContentView(R.layout.epr_p02a_geo);
         createMapView();
         createStreetView();
 

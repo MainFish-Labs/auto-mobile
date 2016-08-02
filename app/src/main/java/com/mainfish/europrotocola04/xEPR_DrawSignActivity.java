@@ -13,7 +13,7 @@ public class xEPR_DrawSignActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawing_sign);
+        setContentView(R.layout.xepr_drawing_sign);
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()

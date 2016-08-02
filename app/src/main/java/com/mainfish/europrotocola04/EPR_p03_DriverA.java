@@ -29,14 +29,14 @@ public class EPR_p03_DriverA extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.driver_a);
+        setContentView(R.layout.epr_p03_driver_a);
 
         infoText = getResources().getStringArray(R.array.info_button3);
         mDrawerListView = (ListView) findViewById(R.id.info_drawer);
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
         insuranseText = getResources().getStringArray(R.array.insuranse_list);
         insuranseTextFull = getResources().getStringArray(R.array.insuranse_list_full);
@@ -46,7 +46,7 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 
         // подключим адаптер для списка
         mDrawerListView_insuranse.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.insuranse_drawer_layout, insuranseText));
+                R.layout.epr_system_insuranse_drawer, insuranseText));
 
         // установим слушатель для щелчков по элементам списка
         mDrawerListView_insuranse.setOnItemClickListener(new DrawerItemClickListener());

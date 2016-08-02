@@ -18,7 +18,7 @@ public class EPR_p02a_PageError extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.page_error);
+        setContentView(R.layout.epr_p02a_page_error);
 
     }
 

@@ -26,14 +26,14 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.scheme_layout);
+        setContentView(R.layout.epr_p06_scheme_layout);
 
         infoText = getResources().getStringArray(R.array.info_button5);
         mDrawerListView = (ListView) findViewById(R.id.info_drawer);
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_scheme);
         mSlideState = false;

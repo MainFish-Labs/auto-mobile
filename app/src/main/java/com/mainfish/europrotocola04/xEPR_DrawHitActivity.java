@@ -13,7 +13,7 @@ public class xEPR_DrawHitActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawing_hit);
+        setContentView(R.layout.xepr_drawing_hit);
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()

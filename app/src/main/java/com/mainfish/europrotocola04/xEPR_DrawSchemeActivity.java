@@ -13,7 +13,7 @@ public class xEPR_DrawSchemeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawing_scheme);
+        setContentView(R.layout.xepr_drawing_scheme);
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()

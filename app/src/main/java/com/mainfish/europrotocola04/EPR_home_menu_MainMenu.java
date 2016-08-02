@@ -1,9 +1,7 @@
 package com.mainfish.europrotocola04;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 public class EPR_home_menu_MainMenu extends AppCompatActivity {
 
@@ -12,7 +10,7 @@ public class EPR_home_menu_MainMenu extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.main_menu);
+        setContentView(R.layout.epr_home_main_menu);
 
     }
 }

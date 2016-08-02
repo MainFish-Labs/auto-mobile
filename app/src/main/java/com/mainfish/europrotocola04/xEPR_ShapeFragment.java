@@ -27,7 +27,7 @@ public class xEPR_ShapeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.drawing_fragment_hit, container, false);
+        View rootView = inflater.inflate(R.layout.xepr_drawing_fragment_hit, container, false);
         mDrawView = (xEPR_DrawView) rootView.findViewById(R.id.drawingview);
         return rootView;
     }

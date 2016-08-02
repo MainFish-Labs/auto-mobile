@@ -29,7 +29,7 @@ public class xEPR_SchemeDTP extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.canvas_scheme);
+        setContentView(R.layout.xepr_canvas_scheme);
 
         //get drawing view
         drawView = (xEPR_DrawingView)findViewById(R.id.drawing);

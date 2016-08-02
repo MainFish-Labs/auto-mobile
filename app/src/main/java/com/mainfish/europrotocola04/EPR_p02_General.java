@@ -82,7 +82,7 @@ public class EPR_p02_General extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-	    setContentView(R.layout.accident_general);
+	    setContentView(R.layout.epr_p02_accident_general);
 
 	    mDataBase = new EPR_system_DataBaseContainer(this, "am_protocol.db", null, 1);
 	    dbGeneral = mDataBase.getWritableDatabase();
@@ -143,7 +143,7 @@ public class EPR_p02_General extends AppCompatActivity {
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.accident_general);
         mSlideState = false;
@@ -352,11 +352,7 @@ public class EPR_p02_General extends AppCompatActivity {
 		boolean[] checkBool = new boolean[3];
 
 		for (int i=0; i < 2; i++) {
-			if (inputGen_temp[(5+i)] == "Да") {
-				checkBool[i] = true;
-			} else {
-				checkBool[i] = false;
-			}
+			checkBool[i] = inputGen_temp[(5 + i)] == "Да";
 		}
 
 		if (checkBool[0]) {
@@ -451,18 +447,18 @@ public class EPR_p02_General extends AppCompatActivity {
 			dbGeneral.update(
 					"t1_general",
 					t1_values,
-					mDataBase.T1_DATE + "= ? OR " +
-							mDataBase.T1_TIME + "= ? OR " +
-							mDataBase.T1_COUNTRY + "= ? OR " +
-							mDataBase.T1_GEO + "= ? OR " +
-							mDataBase.T1_M_PLACE + "= ? OR " +
-							mDataBase.T1_Q1 + "= ? OR " +
-							mDataBase.T1_Q2 + "= ? OR " +
-							mDataBase.T1_Q3 + "= ? OR " +
-							mDataBase.T1_W1 + "= ? OR " +
-							mDataBase.T1_W2 + "= ? OR " +
-							mDataBase.T1_W3 + "= ? OR " +
-							mDataBase.T1_W4 + "= ?",
+					EPR_system_DataBaseContainer.T1_DATE + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_TIME + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_COUNTRY + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_GEO + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_M_PLACE + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_Q1 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_Q2 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_Q3 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_W1 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_W2 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_W3 + "= ? OR " +
+							EPR_system_DataBaseContainer.T1_W4 + "= ?",
 					new String[]{
 							gen_date,
 							gen_time,

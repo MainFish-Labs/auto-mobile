@@ -46,7 +46,7 @@ public class EPR_p08_ReadyPage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.ready_layout);
+        setContentView(R.layout.epr_p08_ready_layout);
 
 	    mDataBase = new EPR_system_DataBaseContainer(this, "am_protocol.db", null, 1);
 

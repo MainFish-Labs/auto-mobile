@@ -16,7 +16,7 @@ public class EPR_home_AutoMobile extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auto_mobile);
+        setContentView(R.layout.epr_home_menu_auto_mobile);
     }
 
     @Override

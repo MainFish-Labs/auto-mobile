@@ -38,14 +38,14 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.circumstances);
+        setContentView(R.layout.epr_p05_circumstances);
 
         infoText = getResources().getStringArray(R.array.info_button4);
         mDrawerListView = (ListView) findViewById(R.id.info_drawer);
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
          SwitchCompat switch_a_1 = (SwitchCompat) findViewById(R.id.circum_a_01);
          SwitchCompat switch_b_1 = (SwitchCompat) findViewById(R.id.circum_b_01);

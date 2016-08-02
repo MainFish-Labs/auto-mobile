@@ -14,7 +14,7 @@ public class xEPR_p02a_GeneralShow extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.general_show);
+        setContentView(R.layout.xepr_p02a_general_show);
 
         String getDate = getIntent().getExtras().getString("getDate");
 

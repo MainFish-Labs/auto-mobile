@@ -16,14 +16,14 @@ public class EPR_info_InfoPage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.info);
+        setContentView(R.layout.epr_info_infopage);
 
         Toolbar infoToolbar = (Toolbar) findViewById(R.id.infoToolbar);
         setSupportActionBar(infoToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.info);
+        getSupportActionBar().setCustomView(R.layout.epr_info_infopage);
 
         TextView infoTitle = (TextView) findViewById(R.id.infoTitle);
         infoTitle.setText(R.string.about_title);

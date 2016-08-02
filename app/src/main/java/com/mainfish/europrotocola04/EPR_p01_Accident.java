@@ -31,7 +31,7 @@ public class EPR_p01_Accident extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.accident);
+        setContentView(R.layout.epr_p01_accident);
 
 
         String styledText = "Нужно последовательно отвечать на вопросы, следуя простым инструкциям. Подсказки по заполнению - <br/>под кнопкой <b><font color=\"#ff0000\">i</font></b>";
@@ -43,7 +43,7 @@ public class EPR_p01_Accident extends AppCompatActivity {
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
 
 

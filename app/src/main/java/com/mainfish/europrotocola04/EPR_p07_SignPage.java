@@ -26,14 +26,14 @@ public class EPR_p07_SignPage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.sign_layout);
+        setContentView(R.layout.epr_p07_sign_layout);
 
         infoText = getResources().getStringArray(R.array.info_button6);
         mDrawerListView = (ListView) findViewById(R.id.info_drawer);
 
         // подключим адаптер для списка
         mDrawerListView.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.info_drawer_layout, infoText));
+                R.layout.epr_system_info_drawer, infoText));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_sign);
         mSlideState = false;

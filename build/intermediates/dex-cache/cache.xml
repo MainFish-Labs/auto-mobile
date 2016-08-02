@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/Users/designer/Documents/java/GitHub/auto-mobile/auto-mobile/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="48bbcf1576fcd0d342d18f136f847e0b87d73712">
-        <dex dex="/Users/designer/Documents/java/GitHub/auto-mobile/auto-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_836df1fbd488fffdb46042c204f9c6cf149f3ffe/classes.dex" />
-    </item>
-
-</items>
+<items version="2" />
