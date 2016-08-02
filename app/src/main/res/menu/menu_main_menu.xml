@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.mainfish.europrotocola04.MainMenu">
+    tools:context=".EPR_home_menu_MainMenu">
     <item
         android:id="@+id/action_preview"
         android:orderInCategory="100"

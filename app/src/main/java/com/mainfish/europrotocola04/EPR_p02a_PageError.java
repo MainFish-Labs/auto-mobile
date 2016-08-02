@@ -5,13 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
 
 
 /**
  * Created by designer on 10/06/16.
  */
-public class PageError  extends AppCompatActivity {
+public class EPR_p02a_PageError extends AppCompatActivity {
 
 
     @Override
@@ -25,14 +24,14 @@ public class PageError  extends AppCompatActivity {
 
     public void gotoGeneral (View view) {
 
-        Intent intentGeneral = new Intent(this, General.class);
+        Intent intentGeneral = new Intent(this, EPR_p02_General.class);
         startActivity(intentGeneral);
 
     }
 
     public void gotoHome (View view) {
 
-        Intent intentHome = new Intent(this, AutoMobile.class);
+        Intent intentHome = new Intent(this, EPR_home_AutoMobile.class);
         startActivity(intentHome);
 
     }

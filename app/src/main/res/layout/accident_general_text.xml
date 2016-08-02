@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mainfish.europrotocola04.MainMenu"
+    tools:context=".EPR_home_menu_MainMenu"
     android:layout_height="wrap_content" android:layout_width="fill_parent">
 
     <LinearLayout

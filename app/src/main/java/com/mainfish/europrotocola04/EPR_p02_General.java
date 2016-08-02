@@ -1,47 +1,36 @@
 package com.mainfish.europrotocola04;
 
-import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.Switch;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
 /**
  * Created by artli on 05.03.2016.
  */
 
-public class General extends AppCompatActivity {
+public class EPR_p02_General extends AppCompatActivity {
 
 	/** Переменные полей ввода */
 
@@ -72,7 +61,7 @@ public class General extends AppCompatActivity {
 
 	public String yes = "Да", no = "Нет";
 
-	private DataBaseContainer mDataBaseContainer;
+	private EPR_system_DataBaseContainer mDataBase;
 	private SQLiteDatabase dbGeneral;
 	private String db_general;
 	private TextView previewGeneral, closePreview;
@@ -95,8 +84,8 @@ public class General extends AppCompatActivity {
 
 	    setContentView(R.layout.accident_general);
 
-	    mDataBaseContainer  = new DataBaseContainer(this, "am_protocol.db", null, 1);
-	    dbGeneral = mDataBaseContainer.getWritableDatabase();
+	    mDataBase = new EPR_system_DataBaseContainer(this, "am_protocol.db", null, 1);
+	    dbGeneral = mDataBase.getWritableDatabase();
 
 	    dataCheckFile = new File(Path, "/db.exist");
 
@@ -227,7 +216,7 @@ public class General extends AppCompatActivity {
 				int j = counter;
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					Toast.makeText(General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
+					Toast.makeText(EPR_p02_General.this, (isChecked ? "В Вашем случае заполнение Извещения о ДТП невозможно\n" +
 							"(см. стр 1 «Обязательные условия»). Вызывайте ГАИ" : textQ[j] + no),Toast.LENGTH_SHORT).show();
 
 					if (isChecked) {
@@ -310,18 +299,18 @@ public class General extends AppCompatActivity {
 		inputGen_temp = new String[total];
 
 		t1_cursor = dbGeneral.query("t1_general", new String[]{
-						DataBaseContainer.T1_DATE,
-						DataBaseContainer.T1_TIME,
-						DataBaseContainer.T1_COUNTRY,
-						DataBaseContainer.T1_GEO,
-						DataBaseContainer.T1_M_PLACE,
-						DataBaseContainer.T1_Q1,
-						DataBaseContainer.T1_Q2,
-						DataBaseContainer.T1_Q3,
-						DataBaseContainer.T1_W1,
-						DataBaseContainer.T1_W2,
-						DataBaseContainer.T1_W3,
-						DataBaseContainer.T1_W4
+						EPR_system_DataBaseContainer.T1_DATE,
+						EPR_system_DataBaseContainer.T1_TIME,
+						EPR_system_DataBaseContainer.T1_COUNTRY,
+						EPR_system_DataBaseContainer.T1_GEO,
+						EPR_system_DataBaseContainer.T1_M_PLACE,
+						EPR_system_DataBaseContainer.T1_Q1,
+						EPR_system_DataBaseContainer.T1_Q2,
+						EPR_system_DataBaseContainer.T1_Q3,
+						EPR_system_DataBaseContainer.T1_W1,
+						EPR_system_DataBaseContainer.T1_W2,
+						EPR_system_DataBaseContainer.T1_W3,
+						EPR_system_DataBaseContainer.T1_W4
 				},
 				null, null, null, null, null);
 
@@ -329,20 +318,20 @@ public class General extends AppCompatActivity {
 		if (t1_cursor != null && t1_cursor.moveToFirst()) {
 
 			inputGen_temp = new String[] {
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_DATE)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_TIME)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_COUNTRY)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_GEO)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_M_PLACE)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_DATE)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_TIME)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_COUNTRY)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_GEO)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_M_PLACE)),
 
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q1)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q2)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_Q3)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_Q1)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_Q2)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_Q3)),
 
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W1)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W2)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W3)),
-					t1_cursor.getString(t1_cursor.getColumnIndex(DataBaseContainer.T1_W4))
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_W1)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_W2)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_W3)),
+					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_W4))
 			};
 
 		}
@@ -441,20 +430,20 @@ public class General extends AppCompatActivity {
 		ContentValues t1_values = new ContentValues();
 
 		// Значения столбцов
-		t1_values.put(DataBaseContainer.T1_DATE, gen_date);
-		t1_values.put(DataBaseContainer.T1_TIME, gen_time);
-		t1_values.put(DataBaseContainer.T1_COUNTRY, gen_country);
-		t1_values.put(DataBaseContainer.T1_GEO, gen_geo);
-		t1_values.put(DataBaseContainer.T1_M_PLACE, gen_city);
+		t1_values.put(EPR_system_DataBaseContainer.T1_DATE, gen_date);
+		t1_values.put(EPR_system_DataBaseContainer.T1_TIME, gen_time);
+		t1_values.put(EPR_system_DataBaseContainer.T1_COUNTRY, gen_country);
+		t1_values.put(EPR_system_DataBaseContainer.T1_GEO, gen_geo);
+		t1_values.put(EPR_system_DataBaseContainer.T1_M_PLACE, gen_city);
 
-		t1_values.put(DataBaseContainer.T1_Q1, q_text1);
-		t1_values.put(DataBaseContainer.T1_Q2, q_text2);
-		t1_values.put(DataBaseContainer.T1_Q3, q_text3);
+		t1_values.put(EPR_system_DataBaseContainer.T1_Q1, q_text1);
+		t1_values.put(EPR_system_DataBaseContainer.T1_Q2, q_text2);
+		t1_values.put(EPR_system_DataBaseContainer.T1_Q3, q_text3);
 
-		t1_values.put(DataBaseContainer.T1_W1, wit_text1);
-		t1_values.put(DataBaseContainer.T1_W2, wit_text2);
-		t1_values.put(DataBaseContainer.T1_W3, wit_text3);
-		t1_values.put(DataBaseContainer.T1_W4, wit_text4);
+		t1_values.put(EPR_system_DataBaseContainer.T1_W1, wit_text1);
+		t1_values.put(EPR_system_DataBaseContainer.T1_W2, wit_text2);
+		t1_values.put(EPR_system_DataBaseContainer.T1_W3, wit_text3);
+		t1_values.put(EPR_system_DataBaseContainer.T1_W4, wit_text4);
 
 		// Вставляем данные в таблицу
 
@@ -462,18 +451,18 @@ public class General extends AppCompatActivity {
 			dbGeneral.update(
 					"t1_general",
 					t1_values,
-					mDataBaseContainer.T1_DATE + "= ? OR " +
-							mDataBaseContainer.T1_TIME + "= ? OR " +
-							mDataBaseContainer.T1_COUNTRY + "= ? OR " +
-							mDataBaseContainer.T1_GEO + "= ? OR " +
-							mDataBaseContainer.T1_M_PLACE + "= ? OR " +
-							mDataBaseContainer.T1_Q1 + "= ? OR " +
-							mDataBaseContainer.T1_Q2 + "= ? OR " +
-							mDataBaseContainer.T1_Q3 + "= ? OR " +
-							mDataBaseContainer.T1_W1 + "= ? OR " +
-							mDataBaseContainer.T1_W2 + "= ? OR " +
-							mDataBaseContainer.T1_W3 + "= ? OR " +
-							mDataBaseContainer.T1_W4 + "= ?",
+					mDataBase.T1_DATE + "= ? OR " +
+							mDataBase.T1_TIME + "= ? OR " +
+							mDataBase.T1_COUNTRY + "= ? OR " +
+							mDataBase.T1_GEO + "= ? OR " +
+							mDataBase.T1_M_PLACE + "= ? OR " +
+							mDataBase.T1_Q1 + "= ? OR " +
+							mDataBase.T1_Q2 + "= ? OR " +
+							mDataBase.T1_Q3 + "= ? OR " +
+							mDataBase.T1_W1 + "= ? OR " +
+							mDataBase.T1_W2 + "= ? OR " +
+							mDataBase.T1_W3 + "= ? OR " +
+							mDataBase.T1_W4 + "= ?",
 					new String[]{
 							gen_date,
 							gen_time,
@@ -547,10 +536,10 @@ public class General extends AppCompatActivity {
 
 	    getBase();
 
-//        Intent intentMap = new Intent(this, SetLocation.class);
+//        Intent intentMap = new Intent(this, EPR_p02a_GEO.class);
 //        startActivity(intentMap);
 //
-//	    mDataBaseContainer.close();
+//	    mDataBase.close();
 //	    dbGeneral.close();
 
     }
@@ -559,10 +548,10 @@ public class General extends AppCompatActivity {
 
 	    getBase();
 
-        Intent intentDriverA = new Intent(this, DriverA.class);
+        Intent intentDriverA = new Intent(this, EPR_p03_DriverA.class);
         startActivity(intentDriverA);
 
-	    mDataBaseContainer.close();
+	    mDataBase.close();
 	    dbGeneral.close();
 
     }
@@ -571,10 +560,10 @@ public class General extends AppCompatActivity {
 
 	    getBase();
 
-        Intent intentErrorPage = new Intent(this, PageError.class);
+        Intent intentErrorPage = new Intent(this, EPR_p02a_PageError.class);
         startActivity(intentErrorPage);
 
-	    mDataBaseContainer.close();
+	    mDataBase.close();
 	    dbGeneral.close();
 
     }
@@ -583,10 +572,10 @@ public class General extends AppCompatActivity {
 
 	    getBase();
 
-        Intent intentAccident = new Intent(this, Accident.class);
+        Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
         startActivity(intentAccident);
 
-	    mDataBaseContainer.close();
+	    mDataBase.close();
 	    dbGeneral.close();
 
     }
@@ -630,7 +619,7 @@ public class General extends AppCompatActivity {
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
 				dataCheckFile.delete();
 				dbSelf.delete();
-				Intent intentAccident = new Intent(this, Accident.class);
+				Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
 				startActivity(intentAccident);
 				Toast.makeText(getApplicationContext(),
 						"База данных очищена", Toast.LENGTH_SHORT).show();

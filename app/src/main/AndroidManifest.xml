@@ -24,7 +24,7 @@
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAVdwrQ83oluHDwWebcu1_-7p1As3xiIgc" />
 
         <activity
-            android:name=".AutoMobile"
+            android:name=".EPR_home_AutoMobile"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -33,162 +33,162 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu"
+            android:name=".EPR_home_menu_MainMenu"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".info"
+            android:name=".EPR_info_InfoPage"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.AutoMobile" />
+                android:value=".EPR_home_AutoMobile" />
         </activity>
         <activity
-            android:name=".Contacts"
+            android:name=".EPR_cont_Contacts"
             android:screenOrientation="portrait"
             android:label="Контакты">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.AutoMobile" />
+                android:value=".EPR_home_AutoMobile" />
         </activity>
         <activity
-            android:name=".Accident"
+            android:name=".EPR_p01_Accident"
             android:screenOrientation="portrait"
             android:label="Если ДТП"
             android:theme="@style/IfDTP">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.AutoMobile" />
+                android:value=".EPR_home_AutoMobile" />
         </activity>
         <activity
-            android:name=".General"
+            android:name=".EPR_p02_General"
             android:screenOrientation="portrait"
             android:label="Общие вопросы"
             android:theme="@style/General">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.Accident" />
+                android:value=".EPR_p01_Accident" />
         </activity>
         <activity
-            android:name=".PageError"
+            android:name=".EPR_p02a_PageError"
             android:screenOrientation="portrait"
             android:label="Заполнение невомзожно"
             android:theme="@style/General">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.General" />
+                android:value=".EPR_p02_General" />
         </activity>
         <activity
-            android:name=".GeneralShow"
+            android:name=".xEPR_p02a_GeneralShow"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.General" />
+                android:value=".EPR_p02_General" />
         </activity>
         <activity
-            android:name=".DriverA"
+            android:name=".EPR_p03_DriverA"
             android:screenOrientation="portrait"
             android:label="Транспортное средство A"
             android:theme="@style/DriverA">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.General" />
+                android:value=".EPR_p02_General" />
         </activity>
         <activity
-            android:name=".DriverB"
+            android:name=".EPR_p04_DriverB"
             android:screenOrientation="portrait"
             android:label="Транспортное средство B"
             android:theme="@style/DriverB">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".Circumstances"
+            android:name=".EPR_p05_Circumstances"
             android:screenOrientation="portrait"
             android:label="Обстоятельства ДТП"
             android:theme="@style/Circum">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverB" />
+                android:value=".EPR_p04_DriverB" />
         </activity>
         <activity
-            android:name=".SchemePage"
+            android:name=".EPR_p06_SchemePage"
             android:screenOrientation="portrait"
             android:label="Схема ДТП"
             android:theme="@style/SchemeDTP">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.Circumstances" />
+                android:value=".EPR_p05_Circumstances" />
         </activity>
         <activity
-            android:name=".SignPage"
+            android:name=".EPR_p07_SignPage"
             android:screenOrientation="portrait"
             android:label="Примечания и подписи"
             android:theme="@style/Signs">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.SchemePage" />
+                android:value=".EPR_p06_SchemePage" />
         </activity>
         <activity
-            android:name=".ReadyPage"
+            android:name=".EPR_p08_ReadyPage"
             android:screenOrientation="portrait"
             android:label="Бланк Извещения о ДТП"
             android:theme="@style/General">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.SignPage" />
+                android:value=".EPR_p07_SignPage" />
         </activity>
         <activity
-            android:name=".SetLocation"
+            android:name=".EPR_p02a_GEO"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.General" />
+                android:value=".EPR_p02_General" />
         </activity>
         <activity
-            android:name=".DriverAHit"
+            android:name=".xEPR_DriverAHit"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".DrawHitActivity"
+            android:name=".xEPR_DrawHitActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".SchemeDTP"
+            android:name=".xEPR_SchemeDTP"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".DrawSchemeActivity"
+            android:name=".xEPR_DrawSchemeActivity"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".Signature"
+            android:name=".xEPR_Signature"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
         <activity
-            android:name=".DrawSignActivity"
+            android:name=".xEPR_DrawSignActivity"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mainfish.europrotocola04.DriverA" />
+                android:value=".EPR_p03_DriverA" />
         </activity>
     </application>
 

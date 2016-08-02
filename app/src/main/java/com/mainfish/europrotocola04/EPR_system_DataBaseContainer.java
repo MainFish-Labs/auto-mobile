@@ -11,7 +11,7 @@ import android.util.Log;
  * Created by MainFish on 08/07/16.
  */
 
-public class DataBaseContainer extends SQLiteOpenHelper implements BaseColumns {
+public class EPR_system_DataBaseContainer extends SQLiteOpenHelper implements BaseColumns {
 
     // Имя базы данных
     private static final String DATABASE_NAME = "am_protocol.db";
@@ -50,11 +50,11 @@ public class DataBaseContainer extends SQLiteOpenHelper implements BaseColumns {
             + T1_W3 + " text, "
             + T1_W4 + " text);";
 
-    DataBaseContainer (Context context) {
+    EPR_system_DataBaseContainer(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public DataBaseContainer(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public EPR_system_DataBaseContainer(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

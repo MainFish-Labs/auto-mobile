@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Signature" >
+    tools:context=".xEPR_Signature" >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/grid" />
 
-    <com.mainfish.europrotocola04.DrawingView
+    <com.mainfish.europrotocola04.xEPR_DrawingView
         android:id="@+id/drawing"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
