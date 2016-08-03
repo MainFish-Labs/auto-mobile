@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId 'com.mainfish.europrotocola04'
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    //compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.itextpdf:itextg:5.5.9'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+//    compile files('libs/itext-pdfa-5.5.9.jar')
+//    compile files('libs/itext-xtra-5.5.9.jar')
+//    compile files('libs/itextpdf-5.5.9.jar')
+//    compile files('libs/xmlworker-5.5.9.jar')
+}

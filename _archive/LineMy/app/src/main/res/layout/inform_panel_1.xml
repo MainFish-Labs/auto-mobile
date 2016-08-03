@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@drawable/custom_fragment"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/tv_advise_step"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#fffafa"
+        android:textSize="14sp"
+        android:background="#fe82a0"
+        android:text="Шаг"/>
+
+    <TextView
+        android:id="@+id/tv_advise_step_number"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#fffafa"
+        android:paddingRight="9dp"
+        android:paddingLeft="9dp"
+        android:textSize="14sp"
+        android:background="#fe82a0"
+        android:text="1"/>
+
+    <TextView
+        android:id="@+id/tv_advise"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="72"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#fffafa"
+        android:paddingRight="8dp"
+        android:background="#21cbcf"
+        android:paddingLeft="8dp"
+        android:textSize="20sp"
+        android:text="СПРАВКА"/>
+
+    <TextView
+        android:id="@+id/tv_advise_slide"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#fffafa"
+        android:paddingRight="6dp"
+        android:paddingLeft="6dp"
+        android:background="#fe82a0"
+        android:textSize="18sp"
+        android:text="i"/>
+    <ImageView
+        android:id="@+id/tv_advise_slide_arrow"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:src="@drawable/arrowwhite"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#fffafa"
+        android:paddingRight="9dp"
+        android:paddingLeft="9dp"
+        android:background="#fe82a0" />
+
+</LinearLayout>

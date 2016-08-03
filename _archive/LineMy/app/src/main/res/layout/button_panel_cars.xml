@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/car_is"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/carsmall" />
+
+    <ImageButton
+        android:id="@+id/car_is_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_is"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/carbbmall" />
+
+    <Button
+        android:id="@+id/rotate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_is_two"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:text="Повернуть"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/cancel_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/go_in_start"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:text="Cтереть шаг"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/go_in_start"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save_2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:text="Стереть схему"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/save_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/state_button_do"
+        android:padding="3dp"
+        android:text="Готово"
+        android:textSize="12sp" />
+
+</RelativeLayout>

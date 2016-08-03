@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mainfish.europrotocola04">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAVdwrQ83oluHDwWebcu1_-7p1As3xiIgc" />
+
+        <activity
+            android:name=".AutoMobile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.AutoMobile" />
+        </activity>
+        <activity
+            android:name=".Contacts"
+            android:screenOrientation="portrait"
+            android:label="Контакты">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.AutoMobile" />
+        </activity>
+        <activity
+            android:name=".Accident"
+            android:screenOrientation="portrait"
+            android:label="Если ДТП"
+            android:theme="@style/IfDTP">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.AutoMobile" />
+        </activity>
+        <activity
+            android:name=".General"
+            android:screenOrientation="portrait"
+            android:label="Общие вопросы"
+            android:theme="@style/General">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.Accident" />
+        </activity>
+        <activity
+            android:name=".PageError"
+            android:screenOrientation="portrait"
+            android:label="Заполнение невомзожно"
+            android:theme="@style/General">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.General" />
+        </activity>
+        <activity
+            android:name=".GeneralShow"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.General" />
+        </activity>
+        <activity
+            android:name=".DriverA"
+            android:screenOrientation="portrait"
+            android:label="Транспортное средство A"
+            android:theme="@style/DriverA">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.General" />
+        </activity>
+        <activity
+            android:name=".DriverB"
+            android:screenOrientation="portrait"
+            android:label="Транспортное средство B"
+            android:theme="@style/DriverB">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".Circumstances"
+            android:screenOrientation="portrait"
+            android:label="Обстоятельства ДТП"
+            android:theme="@style/Circum">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverB" />
+        </activity>
+        <activity
+            android:name=".SchemePage"
+            android:screenOrientation="portrait"
+            android:label="Схема ДТП"
+            android:theme="@style/SchemeDTP">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.Circumstances" />
+        </activity>
+        <activity
+            android:name=".SignPage"
+            android:screenOrientation="portrait"
+            android:label="Примечания и подписи"
+            android:theme="@style/Signs">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.SchemePage" />
+        </activity>
+        <activity
+            android:name=".ReadyPage"
+            android:screenOrientation="portrait"
+            android:label="Бланк Извещения о ДТП"
+            android:theme="@style/General">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.SignPage" />
+        </activity>
+        <activity
+            android:name=".SetLocation"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.General" />
+        </activity>
+        <activity
+            android:name=".DriverAHit"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".DrawHitActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".SchemeDTP"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".DrawSchemeActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".Signature"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+        <activity
+            android:name=".DrawSignActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mainfish.europrotocola04.DriverA" />
+        </activity>
+    </application>
+
+</manifest>

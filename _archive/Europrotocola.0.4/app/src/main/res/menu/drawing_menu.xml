@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="it.gmariotti.android.example.shapefinger.MainActivity" >
+
+    <item android:id="@+id/action_arrow"
+        android:title="@string/action_arrow"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_line"
+        android:title="@string/action_line"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+</menu>

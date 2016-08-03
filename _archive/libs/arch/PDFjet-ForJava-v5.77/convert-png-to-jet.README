@@ -1,0 +1,7 @@
+REM Rename this file to convert-png-to-jet.cmd and then run it to convert PNG image to JET image:
+
+javac -cp .;PDFjet.jar util\PNGtoJET.java
+java -cp .;PDFjet.jar util.PNGtoJET %1
+
+# Or you can compile the PNGtoJET.cs file and run the resulting executable:
+# PNGtoJET.exe %1

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#17cbcf</color>
+    <color name="colorPrimaryDark">#0E7F81</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorHeader">#fe82a0</color>
+    <color name="colorCaption">#ff0000</color>
+    <color name="colorText">#000</color>
+    <color name="actionBarText">#000</color>
+    <color name="colorBorder">#c4c4c4</color>
+    <color name="colorGray">#000</color>
+    <color name="colorGray240">#f0f0f0</color>
+    <color name="colorGray80">#808080</color>
+    <color name="colorDriverA1">#21cbcf</color>
+    <color name="colorDriverA2">#55e5e5</color>
+    <color name="colorDriverA3">#81f1ff</color>
+    <color name="colorDriverB1">#9c967f</color>
+    <color name="colorDriverB2">#ebe271</color>
+    <color name="colorDriverB3">#f4e480</color>
+    <color name="colorDriverB3_old">#fff94c</color>
+    <color name="colorDriverB4">#eac042</color>
+    <color name="colorDriverB5">#f9f4cb</color>
+    <color name="colorCircum">#adccda</color>
+</resources>
