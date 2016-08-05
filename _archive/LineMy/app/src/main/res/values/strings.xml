@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">LineMy</string>
+
+    <string name="Step_one">ШАГ 1. УЧАСТОК ДОРОГИ. РАЗМЕТКА</string>
+     <string name="Step_two">ШАГ 2. АВТОМОБИЛИ</string>
+     <string name="Step_three">ШАГ 3. НАПРАВЛЕНИЯ ДВИЖЕНИЯ АВТОМОБИЛЕЙ</string>
+     <string name="Step_four">ШАГ 4. ДОРОЖНЫЕ ЗНАКИ</string>
+     <string name="Step_five">ШАГ 5. НАЗВАНИЯ УЛИЦ, ТРАСС</string>
+     <string name="Step_six">ШАГ 6. ДОПОЛНЕНИЯ</string>
+
+    <string name="What_one">- участок дороги и разметку</string>
+    <string name="What_two">- конечное положение автомобилей</string>
+    <string name="What_three">- указать стрелкой направления движения автомобилей</string>
+      <string name="What_four">- знак \"главная дорога\"\n- знак \"уступи дорогу\"\n- светофор\nЭтот шаг можно пропустить,\nнажав на кнопку ГОТОВО</string>
+      <string name="What_five">- названия улиц, трассы\n- номера домов, километр трассы</string>
+      <string name="What_six">- то, что считаете важным в ДТП.\nМожно пропустить этот шаг, \nнажав на кнопку ГОТОВО</string>
+
+      <string name="How_one">- нажимаете на линию слева\n- проводите пальцем по экрану \n- для рисования следующей линии - опять нажимаете на линию  слева и т.д\n- только что нарисованную линию\nразметки можно переместить  пальцем
+      </string>
+      <string name="How_two">- нажимаете на  автомобиль\n- касаетесь экрана\n- перемещаете автомобиль пальцем\n- вращаете, нажав на ПОВЕРНУТЬ\n\nТо же для  второго автомобиля
+      </string>
+      <string name="How_three">- нажимаете на нужную стрелку\n- проводите пальцем по экрану
+      </string>
+      <string name="How_four">- нажимаете на нужный знак\n- касаетесь экрана пальцем\n- перемещаете знак пальцем
+      </string>
+      <string name="How_five">- нажимаете на нужный текст\n- набираете текст, жмете ГОТОВО\n- касаетесь экрана пальцем\n- передвигаете текст пальцем
+      </string>
+      <string name="How_six">- нажимаете на линию слева\n- проводите пальцем по экрану\n- для рисования следующей линии - опять нажимаете на линию слева и т.д
+      </string>
+
+    <string name="Step_one_is">Дорога</string>
+    <string name="Step_two_is">Машины</string>
+    <string name="Step_three_is">Стрелки</string>
+    <string name="Step_four_is">Знаки</string>
+    <string name="Step_five_is">Текст</string>
+    <string name="Step_six_is">Прочее</string>
+
+</resources>

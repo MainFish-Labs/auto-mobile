@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_inst_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:background="#aafeffff"
+        android:text="Контуры дороги"
+        android:textColor="#111111"
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/line_stright_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_inst_line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/mylines" />
+
+    <TextView
+        android:id="@+id/text_inst_line_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_stright_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="2dp"
+        android:background="#aafeffff"
+        android:text="Разметка"
+        android:textColor="#111111"
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/line_stright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_inst_line_2"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/mylinesnew" />
+
+    <ImageButton
+        android:id="@+id/line_duble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_stright"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/mydlines" />
+
+    <ImageButton
+        android:id="@+id/dashed_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_duble"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:src="@drawable/myslines" />
+
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/state_button"
+        android:padding="3dp"
+        android:layout_margin="3dp"
+        android:text="Cтереть шаг"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:background="@drawable/state_button_do"
+        android:padding="3dp"
+        android:text="Готово"
+        android:textSize="12sp" />
+
+</RelativeLayout>
+

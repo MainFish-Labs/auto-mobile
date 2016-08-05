@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listArraySteps">
+        <item>@string/Step_one</item>
+        <item>@string/Step_two</item>
+        <item>@string/Step_three</item>
+        <item>@string/Step_four</item>
+        <item>@string/Step_five</item>
+        <item>@string/Step_six</item>
+    </string-array>
+
+    <string-array name="listArrayStepsIs">
+        <item>@string/Step_one_is</item>
+        <item>@string/Step_two_is</item>
+        <item>@string/Step_three_is</item>
+        <item>@string/Step_four_is</item>
+        <item>@string/Step_five_is</item>
+        <item>@string/Step_six_is</item>
+    </string-array>
+
+    <string-array name="listArrayWhat">
+        <item>@string/What_one</item>
+        <item>@string/What_two</item>
+        <item>@string/What_three</item>
+        <item>@string/What_four</item>
+        <item>@string/What_five</item>
+        <item>@string/What_six</item>
+    </string-array>
+
+    <string-array name="listArrayHow">
+        <item>@string/How_one</item>
+        <item>@string/How_two</item>
+        <item>@string/How_three</item>
+        <item>@string/How_four</item>
+        <item>@string/How_five</item>
+        <item>@string/How_six</item>
+    </string-array>
+
+    </resources>
