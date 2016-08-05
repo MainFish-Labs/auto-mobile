@@ -73,7 +73,9 @@ public class EPR_p02_General extends AppCompatActivity {
 	public String[] valuesGen_temp = new String[total];
 
 	public File Path_sys = android.os.Environment.getExternalStorageDirectory();
-	public File dataCheckFile;
+	public File dataCheckFile, dataCheckAll;
+	public String dataCheckNameGeneral = "/db_gen.exist";
+	public String dataCheckNameAll = "/db.exist";
 	public String dataCheckPath = "/am_cache";
 	public String Path = Path_sys + dataCheckPath;
 
@@ -87,13 +89,14 @@ public class EPR_p02_General extends AppCompatActivity {
 	    mDataBase = new EPR_system_DataBaseContainer(this, "am_protocol.db", null, 1);
 	    dbGeneral = mDataBase.getWritableDatabase();
 
-	    dataCheckFile = new File(Path, "/db.exist");
+	    dataCheckAll = new File(Path, dataCheckNameAll);
+	    dataCheckFile = new File(Path, dataCheckNameGeneral);
 
 	    setFields();
 	    setUpInfoDrawer();
 	    handleSwitchesGeneral();
 
-	    if (dataCheckFile.exists()) {
+	    if (dataCheckFile.exists() && dataCheckAll.exists()) {
 		    getCursor();
 	    } else {
 		    getDateTime();
@@ -443,7 +446,7 @@ public class EPR_p02_General extends AppCompatActivity {
 
 		// Вставляем данные в таблицу
 
-		if (dataCheckFile.exists()) {
+		if (dataCheckFile.exists() && dataCheckAll.exists()) {
 			dbGeneral.update(
 					"t1_general",
 					t1_values,
@@ -484,7 +487,18 @@ public class EPR_p02_General extends AppCompatActivity {
 		}
 
 		assert previewGeneral != null;
-		db_general = "Дата ДТП:    " + gen_date + "\nВремя ДТП:    " + gen_time + "\nСтрана ДТП:    " + gen_country + "\nМесто ДПТ:    " + gen_geo + "\nМесто ДТП:    " + gen_city + "\nПострадавшие?    " + q_text1 + "\nВред транспорту?    " + q_text2 + "\nВред имуществу?    " + q_text3 + "\nСвидетель 1:    " + wit_text1 + "\nСвидетель 2:    " + wit_text2 + "\nСвидетель 3:    " + wit_text3 + "\nСвидетель 4:   " + wit_text4;
+		db_general = "Дата ДТП:    " + gen_date
+				+ "\nВремя ДТП:    " + gen_time
+				+ "\nСтрана ДТП:    " + gen_country
+				+ "\nМесто ДПТ:    " + gen_geo
+				+ "\nМесто ДТП:    " + gen_city
+				+ "\nПострадавшие?    " + q_text1
+				+ "\nВред транспорту?    " + q_text2
+				+ "\nВред имуществу?    " + q_text3
+				+ "\nСвидетель 1:    " + wit_text1
+				+ "\nСвидетель 2:    " + wit_text2
+				+ "\nСвидетель 3:    " + wit_text3
+				+ "\nСвидетель 4:   " + wit_text4;
 
 	}
 
@@ -492,9 +506,11 @@ public class EPR_p02_General extends AppCompatActivity {
 		
 		String sdState = android.os.Environment.getExternalStorageState();
 		if (sdState.equals(android.os.Environment.MEDIA_MOUNTED)) {
-			dataCheckFile = new File(Path_sys, dataCheckPath + "/db.exist");
+			dataCheckFile = new File(Path_sys, dataCheckPath + dataCheckNameGeneral);
+			dataCheckAll = new File(Path_sys, dataCheckPath + dataCheckNameAll);
 		} else {
 			dataCheckFile = getApplicationContext().getCacheDir();
+			dataCheckAll = getApplicationContext().getCacheDir();
 		}
 
 		if (!dataCheckFile.exists()) {
@@ -503,6 +519,28 @@ public class EPR_p02_General extends AppCompatActivity {
 
 				try {
 					FileWriter fWr = new FileWriter(dataCheckFile);
+					fWr.write("database exist");
+					fWr.flush();
+					fWr.close();
+
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}catch (Exception e1) {
+				return;
+			}
+		}
+
+		if (!dataCheckAll.exists()) {
+			try {
+				dataCheckAll.createNewFile();
+
+				try {
+					FileWriter fWr = new FileWriter(dataCheckAll);
 					fWr.write("database exist");
 					fWr.flush();
 					fWr.close();
@@ -547,8 +585,8 @@ public class EPR_p02_General extends AppCompatActivity {
         Intent intentDriverA = new Intent(this, EPR_p03_DriverA.class);
         startActivity(intentDriverA);
 
-	    mDataBase.close();
-	    dbGeneral.close();
+//	    mDataBase.close();
+//	    dbGeneral.close();
 
     }
 
@@ -559,8 +597,8 @@ public class EPR_p02_General extends AppCompatActivity {
         Intent intentErrorPage = new Intent(this, EPR_p02a_PageError.class);
         startActivity(intentErrorPage);
 
-	    mDataBase.close();
-	    dbGeneral.close();
+//	    mDataBase.close();
+//	    dbGeneral.close();
 
     }
 
@@ -571,8 +609,8 @@ public class EPR_p02_General extends AppCompatActivity {
         Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
         startActivity(intentAccident);
 
-	    mDataBase.close();
-	    dbGeneral.close();
+//	    mDataBase.close();
+//	    dbGeneral.close();
 
     }
 
@@ -585,6 +623,16 @@ public class EPR_p02_General extends AppCompatActivity {
         }
 
     }
+
+	@Override
+	public void onBackPressed() {
+		if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
+			mDrawerLayout.closeDrawer(GravityCompat.END);
+		} else {
+			getBase();
+			super.onBackPressed();
+		}
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -613,8 +661,17 @@ public class EPR_p02_General extends AppCompatActivity {
 
 			case R.id.action_clear_db:
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
-				dataCheckFile.delete();
 				dbSelf.delete();
+
+				dataCheckFile.delete();
+				dataCheckAll.delete();
+
+				File oldBaseDrA = new File(Path, "/db_drA.exist");
+				oldBaseDrA.delete();
+
+				File oldBaseDrB = new File(Path, "/db_drB.exist");
+				oldBaseDrB.delete();
+
 				Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
 				startActivity(intentAccident);
 				Toast.makeText(getApplicationContext(),

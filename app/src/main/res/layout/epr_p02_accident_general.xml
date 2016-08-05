@@ -216,17 +216,17 @@
         android:layout_marginBottom="10dp"
         android:onClick="btnOpenI" />
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="500dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:id="@+id/testBase"
-            android:background="@drawable/back_button_gray"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:gravity="left|top"
-            android:padding="20dp" />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/testBase"
+        android:background="@drawable/back_button_gray"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:gravity="left|top"
+        android:padding="20dp" />
 
     <TextView
         android:layout_width="wrap_content"

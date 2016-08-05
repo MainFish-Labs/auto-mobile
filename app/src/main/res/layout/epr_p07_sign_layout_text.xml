@@ -242,9 +242,60 @@
                     android:layout_width="0dp"
                     android:layout_height="24dp"
                     android:text="@string/sign6"
-                    android:id="@+id/draw_hit_A"
+                    android:id="@+id/draw_signA"
                     android:layout_column="1"
                     android:background="@drawable/back_button_driver_a"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    style="@style/button"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:text="@string/sign6"
+                    android:id="@+id/img_signA"
+                    android:layout_column="1"
                     android:gravity="center_vertical|center_horizontal"
                     android:clickable="true"
                     android:paddingEnd="40dp"
@@ -310,7 +361,7 @@
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"
-                    android:id="@+id/nameA" />
+                    android:id="@+id/signA_fio" />
 
                 <Space
                     android:layout_width="20dp"
@@ -465,9 +516,60 @@
                     android:layout_width="0dp"
                     android:layout_height="24dp"
                     android:text="@string/sign6"
-                    android:id="@+id/draw_hit_A_guilty"
+                    android:id="@+id/draw_signA_resp"
                     android:layout_column="1"
                     android:background="@drawable/back_button_driver_a"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    style="@style/button"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:text="@string/sign6"
+                    android:id="@+id/img_signA_resp"
+                    android:layout_column="1"
                     android:gravity="center_vertical|center_horizontal"
                     android:clickable="true"
                     android:paddingEnd="40dp"
@@ -533,7 +635,7 @@
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"
-                    android:id="@+id/name_responsibleA" />
+                    android:id="@+id/signA_fio_resp" />
 
                 <Space
                     android:layout_width="20dp"
@@ -769,10 +871,60 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="24dp"
-                    android:text="@string/sign6"
+                    android:text="@string/draw_sign"
                     android:layout_column="1"
                     android:background="@drawable/back_button_yellow"
-                    android:onClick="drawHitA"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    style="@style/button"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:text="@string/sign6"
+                    android:id="@+id/img_signB"
+                    android:layout_column="1"
                     android:gravity="center_vertical|center_horizontal"
                     android:clickable="true"
                     android:paddingEnd="40dp"
@@ -837,7 +989,7 @@
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"
-                    android:id="@+id/nameB" />
+                    android:id="@+id/signB_fio" />
 
                 <Space
                     android:layout_width="20dp"
@@ -994,7 +1146,57 @@
                     android:text="@string/sign6"
                     android:layout_column="1"
                     android:background="@drawable/back_button_yellow"
-                    android:onClick="drawHitA"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    style="@style/button"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:text="@string/sign6"
+                    android:id="@+id/img_signB_resp"
+                    android:layout_column="1"
                     android:gravity="center_vertical|center_horizontal"
                     android:clickable="true"
                     android:paddingEnd="40dp"
@@ -1060,7 +1262,7 @@
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"
-                    android:id="@+id/name_responsibleB" />
+                    android:id="@+id/signB_fio_resp" />
 
                 <Space
                     android:layout_width="20dp"

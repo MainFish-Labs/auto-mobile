@@ -10,4 +10,13 @@
 
     <include layout="@layout/epr_home_main_menu" />
 
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:indicator="SquareSpin"
+        app:indicator_color="#000"
+    />
+
 </LinearLayout>

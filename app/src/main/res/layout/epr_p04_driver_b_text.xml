@@ -1227,7 +1227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tsa38"
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/driver_b_radio_1"
                     style="@style/fill_form"
                     android:layout_marginLeft="34dp" />
 
@@ -1235,7 +1235,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tsa41"
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/driver_b_radio_2"
                     style="@style/fill_form"
                     android:layout_marginLeft="34dp" />
 
@@ -1243,7 +1243,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tsa42"
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/driver_b_radio_3"
                     style="@style/fill_form"
                     android:layout_marginLeft="34dp" />
 
@@ -2105,7 +2105,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/driver_a_lic_series"
+                    android:id="@+id/driver_b_lic_series"
                     android:layout_weight="1"
                     style="@style/edit_hint"
                     android:inputType="datetime|date"
@@ -2138,7 +2138,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/driver_a_lic_num"
+                    android:id="@+id/driver_b_lic_num"
                     android:layout_weight="1"
                     style="@style/edit_hint"
                     android:inputType="datetime|date"
@@ -2170,7 +2170,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/driver_a_lic_category"
+                    android:id="@+id/driver_b_lic_category"
                     android:layout_weight="1"
                     style="@style/edit_hint"
                     android:focusable="true"
@@ -2336,7 +2336,7 @@
                     android:layout_width="0dp"
                     android:layout_height="24dp"
                     android:text="@string/draw_hit"
-                    android:id="@+id/draw_hit_B"
+                    android:id="@+id/draw_hit_B_button"
                     android:layout_column="1"
                     android:background="@drawable/back_button_yellow"
                     android:gravity="center_vertical|center_horizontal"
@@ -2347,6 +2347,55 @@
                     android:layout_marginRight="40dp"
                     style="@style/button"
                     android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight=".15"
+                    android:layout_column="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight=".15" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/draw_hit_B"
+                    android:layout_column="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/scheme_drA_descr" />
 
                 <Space
                     android:layout_width="0dp"

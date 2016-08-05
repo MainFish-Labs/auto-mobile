@@ -8,10 +8,18 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -41,6 +49,27 @@ public class EPR_p08_ReadyPage extends AppCompatActivity {
 
     public String path_path, file_name, db_general = " ";
 
+    /** Переменные полей ввода */
+
+    public ImageView SchemeDTP;
+
+    /** Переменные базы данных */
+
+    public Cursor t3_cursor; // !!!!
+
+    public String yes = "Да", no = "Нет", empty = "";
+
+    private EPR_system_DataBaseContainer mDataBase;
+    private SQLiteDatabase dbDriverB;
+    private String db_driverB, db_driverB_name = "t3_driverB";
+    private TextView previewDriverB, closePreview;
+    private ScrollView previewScroll;
+    private ImageView previewImg;
+    private TableLayout previewTable;
+    private TableRow previewRow1, previewRow2;
+
+    public String schemeImage;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
 
@@ -56,11 +85,6 @@ public class EPR_p08_ReadyPage extends AppCompatActivity {
 
 
     /** Обработка базы данных */
-
-    public Cursor cursor; // !!!!
-
-    private EPR_system_DataBaseContainer mDataBase;
-    private SQLiteDatabase mSQLiteDatabase;
 
     public String gen_date = "", gen_time = "", gen_country = "", gen_geo = "", gen_city = "";
     public String textQ1 = "Нет", textQ2 = "Нет", textQ3 = "Нет", q_text1 = "Нет", q_text2 = "Нет", q_text3 = "Нет";
@@ -257,6 +281,89 @@ public class EPR_p08_ReadyPage extends AppCompatActivity {
 
         Intent intentSignPage = new Intent(this, EPR_p07_SignPage.class);
         startActivity(intentSignPage);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
+            mDrawerLayout.closeDrawer(GravityCompat.END);
+        } else {
+            getBase();
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.action_preview:
+
+                getBase();
+                previewDriverB = (TextView)findViewById(R.id.testBase);
+                previewDriverB.setText(db_driverB, TextView.BufferType.EDITABLE);
+                previewDriverB.setVisibility((previewDriverB.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                closePreview = (TextView)findViewById(R.id.preview_close);
+                closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                previewScroll = (ScrollView)findViewById(R.id.testBaseScroll);
+                previewScroll.setVisibility((previewScroll.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                previewImg = (ImageView)findViewById(R.id.testBaseImg);
+                previewImg.setImageResource(R.drawable.logo); /** Временное явление */
+                previewImg.setVisibility((previewImg.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                previewTable = (TableLayout)findViewById(R.id.testBaseTable);
+                previewTable.setVisibility((previewTable.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                previewRow1 = (TableRow)findViewById(R.id.testBaseRow1);
+                previewRow1.setVisibility((previewRow1.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                previewRow2 = (TableRow)findViewById(R.id.testBaseRow2);
+                previewRow2.setVisibility((previewRow2.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+                Toast.makeText(getApplicationContext(),
+                        "Предварительный просмотр", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_clear_db:
+                File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
+                dbSelf.delete();
+
+                dataCheckFile.delete();
+                dataCheckAll.delete();
+
+                File oldBaseDrGen = new File(Path, "/db_gen.exist");
+                oldBaseDrGen.delete();
+
+                File oldBaseDrA = new File(Path, "/db_drA.exist");
+                oldBaseDrA.delete();
+
+                Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
+                startActivity(intentAccident);
+                Toast.makeText(getApplicationContext(),
+                        "База данных очищена", Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void closePreview (View view) {
+
+        previewDriverB.setVisibility((previewDriverB.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        closePreview.setVisibility((closePreview.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        previewScroll.setVisibility((previewScroll.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        previewImg.setVisibility((previewImg.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        previewTable.setVisibility((previewTable.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        previewRow1.setVisibility((previewRow1.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
+        previewRow2.setVisibility((previewRow2.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE);
 
     }
 

@@ -23,15 +23,15 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
-    //compile 'com.android.support:appcompat-v7:+'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
+
     compile 'com.google.android.gms:play-services:8.4.0'
+
     compile 'com.itextpdf:itextg:5.5.9'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.9.5'
-//    compile files('libs/itext-pdfa-5.5.9.jar')
-//    compile files('libs/itext-xtra-5.5.9.jar')
-//    compile files('libs/itextpdf-5.5.9.jar')
-//    compile files('libs/xmlworker-5.5.9.jar')
+
+    compile 'com.wang.avi:library:1.0.5'
+    compile 'com.nineoldandroids:library:2.4.0'
 }

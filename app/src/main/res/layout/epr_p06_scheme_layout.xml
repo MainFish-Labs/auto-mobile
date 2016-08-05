@@ -213,30 +213,12 @@
         android:layout_marginTop="96dp"
         android:layout_alignTop="@+id/tableLayout2" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="32dp"
-        android:layout_height="24dp"
-        android:text="@string/info"
-        android:id="@+id/button"
-        android:background="@drawable/back_red"
-        android:textAllCaps="false"
-        android:layout_gravity="fill_horizontal"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="false"
-        android:layout_marginBottom="10dp"
-        android:layout_alignBottom="@+id/cover"
-        android:onClick="btnOpenI" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scheme17"
         android:id="@+id/textView15"
-        android:layout_below="@+id/button_draw"
+        android:layout_below="@+id/schemeDTP"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/textView16"
@@ -330,9 +312,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/schemeDTP"
-        android:layout_below="@+id/button_how_to_draw"
+        android:layout_below="@+id/button_draw"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:background="@drawable/back_button_gray"
+        android:id="@+id/testBaseScroll"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:gravity="left|top"
+        android:padding="20dp">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/testBaseTable">
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow2">
+
+                <ImageView android:id="@+id/testBaseImg"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close"
+        android:id="@+id/preview_close"
+        android:layout_alignTop="@+id/testBaseScroll"
+        android:layout_alignRight="@+id/testBaseScroll"
+        android:padding="3dp"
+        android:onClick="closePreview"
+        android:visibility="gone"
+        android:textColor="@color/colorText"
+        style="@style/text_circum" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        android:text="@string/info"
+        android:id="@+id/button"
+        android:background="@drawable/back_red"
+        android:textAllCaps="false"
+        android:layout_gravity="fill_horizontal"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginBottom="10dp"
+        android:layout_alignBottom="@+id/cover"
+        android:onClick="btnOpenI" />
+
 
 </RelativeLayout>
 
