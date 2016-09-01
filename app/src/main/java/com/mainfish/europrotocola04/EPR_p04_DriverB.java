@@ -1,6 +1,7 @@
 package com.mainfish.europrotocola04;
 
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -172,7 +173,6 @@ public class EPR_p04_DriverB extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.epr_p04_driver_b);
 
 	    mContext = EPR_p04_DriverB.this;
@@ -533,10 +533,10 @@ public class EPR_p04_DriverB extends AppCompatActivity {
 					t3_cursor.getString(t3_cursor.getColumnIndex(EPR_system_DataBaseContainer.T3_DAMAGE))
 			};
 
-		}
+			t3_cursor.close();
+			t3_cursor.moveToFirst();
 
-		t3_cursor.close();
-		t3_cursor.moveToFirst();
+		}
 
 		checkID.setText(inputDrB_temp[0], TextView.BufferType.EDITABLE);
 		drB_01_Surname.setText(inputDrB_temp[1], TextView.BufferType.EDITABLE);
@@ -1122,6 +1122,9 @@ public class EPR_p04_DriverB extends AppCompatActivity {
 				break;
 			
 			case R.id.action_clear_db:
+
+				ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
 				dbSelf.delete();
 
@@ -1160,6 +1163,9 @@ public class EPR_p04_DriverB extends AppCompatActivity {
 
     public void gotoCircum (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentCircum = new Intent(this, EPR_p05_Circumstances.class);
@@ -1168,6 +1174,9 @@ public class EPR_p04_DriverB extends AppCompatActivity {
     }
 
     public void gotoDriverA (View view) {
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 
 	    getBase();
 
@@ -1203,6 +1212,9 @@ public class EPR_p04_DriverB extends AppCompatActivity {
 		} else if (mDrawerIns.isDrawerOpen(GravityCompat.START)) {
 			mDrawerIns.closeDrawer(GravityCompat.START);
 		} else {
+
+			ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 			getBase();
 			super.onBackPressed();
 		}

@@ -111,7 +111,7 @@
         android:layout_alignTop="@+id/textView17"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
-        android:onClick="preview" />
+        android:onClick="btnShow" />
 
     <TextView
         android:layout_width="220dp"
@@ -129,7 +129,7 @@
         android:layout_alignLeft="@+id/ready_save"
         android:layout_alignStart="@+id/ready_save"
         android:layout_marginTop="36dp"
-        android:onClick="gotoStart" />
+        android:onClick="btnEdit" />
 
     <TextView
         android:layout_width="220dp"
@@ -248,14 +248,14 @@
             android:id="@+id/testBaseTable">
 
             <TableRow android:visibility="gone"
-                android:id="@+id/testBaseRow1">
+                android:id="@+id/testBaseRow_gen">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="Small Text"
-                    android:id="@+id/testBase"
+                    android:id="@+id/testBase_gen"
                     android:layout_centerInParent="true"
                     android:gravity="left|top"
                     android:visibility="gone" />
@@ -263,9 +263,218 @@
             </TableRow>
 
             <TableRow android:visibility="gone"
-                android:id="@+id/testBaseRow2">
+                android:id="@+id/testBaseRow_drA1">
 
-                <ImageView android:id="@+id/testBaseImg"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_drA"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_drA2">
+
+                <ImageView android:id="@+id/testBaseImg_drA"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_drB1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_drB"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_drB2">
+
+                <ImageView android:id="@+id/testBaseImg_drB"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_circum">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_circum"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_scheme1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_scheme"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow_scheme2">
+
+                <ImageView android:id="@+id/testBaseImg_scheme"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow1a">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_primA"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow2a">
+
+                <ImageView android:id="@+id/testBase_signA"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow3a">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_nameA"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow4a">
+
+                <ImageView android:id="@+id/testBase_signA_resp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow5a">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_nameA_resp"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRowSpace">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/testBase_Space"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow1b">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_primB"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow2b">
+
+                <ImageView android:id="@+id/testBase_signB"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow3b">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_nameB"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow4b">
+
+                <ImageView android:id="@+id/testBase_signB_resp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow android:visibility="gone"
+                android:id="@+id/testBaseRow5b">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/testBase_nameB_resp"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|top"
                     android:visibility="gone" />
 
             </TableRow>

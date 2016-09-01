@@ -2,6 +2,7 @@ package com.mainfish.europrotocola04;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,49 +44,70 @@ public class EPR_home_AutoMobile extends Activity {
 
     public void infoClick (View view) {
 
-        Intent intentInfo = new Intent(this, EPR_info_InfoPage.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentInfo = new Intent(this, EPR_info_InfoPage.class);
         startActivity(intentInfo);
 
     }
 
     public void contactsClick (View view) {
 
-        Intent intentContacts = new Intent(this, EPR_cont_Contacts.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentContacts = new Intent(this, EPR_cont_Contacts.class);
         startActivity(intentContacts);
 
     }
 
     public void accidentClick (View view) {
 
-        Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentAccident = new Intent(this, EPR_p01_Accident.class);
         startActivity(intentAccident);
 
     }
 
     public void drawHitA (View view) {
 
-        Intent intentDrawHitA = new Intent(this, xEPR_DrawHitActivity.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentDrawHitA = new Intent(this, xEPR_DrawHitActivity.class);
         startActivity(intentDrawHitA);
 
     }
 
     public void drawScheme (View view) {
 
-        Intent intentDrawSchemeA = new Intent(this, xEPR_DrawSchemeActivity.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentDrawSchemeA = new Intent(this, xEPR_DrawSchemeActivity.class);
         startActivity(intentDrawSchemeA);
 
     }
 
     public void drawSign (View view) {
 
-        Intent intentDrawSignA = new Intent(this, xEPR_DrawSignActivity.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentDrawSignA = new Intent(this, xEPR_DrawSignActivity.class);
         startActivity(intentDrawSignA);
 
     }
 
     public void gotoCircum (View view) {
 
-        Intent intentCircum = new Intent(this, EPR_p08_ReadyPage.class);
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
+	    Intent intentCircum = new Intent(this, EPR_p08_ReadyPage.class);
         startActivity(intentCircum);
 
     }

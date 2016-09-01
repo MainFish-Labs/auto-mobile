@@ -1,5 +1,6 @@
 package com.mainfish.europrotocola04;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -337,10 +338,10 @@ public class EPR_p02_General extends AppCompatActivity {
 					t1_cursor.getString(t1_cursor.getColumnIndex(EPR_system_DataBaseContainer.T1_W4))
 			};
 
-		}
+			t1_cursor.close();
+			t1_cursor.moveToFirst();
 
-		t1_cursor.close();
-		t1_cursor.moveToFirst();
+		}
 
 		setDate.setText(inputGen_temp[0], TextView.BufferType.EDITABLE);
 		setTime.setText(inputGen_temp[1],TextView.BufferType.EDITABLE);
@@ -568,6 +569,9 @@ public class EPR_p02_General extends AppCompatActivity {
 
     public void gotoMap (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
 //        Intent intentMap = new Intent(this, EPR_p02a_GEO.class);
@@ -579,6 +583,9 @@ public class EPR_p02_General extends AppCompatActivity {
     }
 
     public void gotoDriverA (View view) {
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 
 	    getBase();
 
@@ -592,6 +599,9 @@ public class EPR_p02_General extends AppCompatActivity {
 
     public void gotoErrorPage (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentErrorPage = new Intent(this, EPR_p02a_PageError.class);
@@ -603,6 +613,9 @@ public class EPR_p02_General extends AppCompatActivity {
     }
 
     public void accidentClick (View view) {
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 
 	    getBase();
 
@@ -629,6 +642,9 @@ public class EPR_p02_General extends AppCompatActivity {
 		if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
 			mDrawerLayout.closeDrawer(GravityCompat.END);
 		} else {
+
+			ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 			getBase();
 			super.onBackPressed();
 		}
@@ -660,6 +676,9 @@ public class EPR_p02_General extends AppCompatActivity {
 				break;
 
 			case R.id.action_clear_db:
+
+				ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
 				dbSelf.delete();
 

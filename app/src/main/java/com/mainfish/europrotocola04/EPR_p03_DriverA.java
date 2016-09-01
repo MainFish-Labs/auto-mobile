@@ -1,5 +1,6 @@
 package com.mainfish.europrotocola04;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -528,11 +529,11 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 					t2_cursor.getString(t2_cursor.getColumnIndex(EPR_system_DataBaseContainer.T2_HITBMP)),
 					t2_cursor.getString(t2_cursor.getColumnIndex(EPR_system_DataBaseContainer.T2_DAMAGE))
 			};
+
+			t2_cursor.close();
+			t2_cursor.moveToFirst();
 			
 		}
-		
-		t2_cursor.close();
-		t2_cursor.moveToFirst();
 
 		checkID.setText(inputDrA_temp[0], TextView.BufferType.EDITABLE);
 		drA_01_Surname.setText(inputDrA_temp[1], TextView.BufferType.EDITABLE);
@@ -1117,6 +1118,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 				break;
 
 			case R.id.action_clear_db:
+
+				ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
 				dbSelf.delete();
 
@@ -1154,6 +1158,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 
     public void gotoDriverB (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentDriverB = new Intent(this, EPR_p04_DriverB.class);
@@ -1183,6 +1190,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 
     public void accident_generalClick (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentGeneral = new Intent(this, EPR_p02_General.class);
@@ -1197,6 +1207,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 		} else if (mDrawerIns.isDrawerOpen(GravityCompat.START)) {
 			mDrawerIns.closeDrawer(GravityCompat.START);
 		} else {
+
+			ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 			getBase();
 			super.onBackPressed();
 		}
@@ -1208,6 +1221,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 
     public void drawHitA (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentDrawHitA = new Intent(this, xEPR_DrawHitActivity.class);
@@ -1217,6 +1233,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
 
     public void drawScheme (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentDrawScheme = new Intent(this, xEPR_SchemeDTP.class);
@@ -1225,6 +1244,9 @@ public class EPR_p03_DriverA extends AppCompatActivity {
     }
 
     public void drawSign (View view) {
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 
 	    getBase();
 

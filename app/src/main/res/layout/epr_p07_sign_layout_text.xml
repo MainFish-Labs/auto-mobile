@@ -17,22 +17,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_weight="0"
-                android:layout_column="1" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="1" />
 
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_weight="0"
-                android:layout_column="3" />
-        </TableRow>
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:layout_column="3" />
+            </TableRow>
 
         </TableLayout>
 
@@ -985,7 +985,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sign7"
+                    android:text="@string/sign12"
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"
@@ -1258,7 +1258,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sign7"
+                    android:text="@string/sign12"
                     android:layout_column="1"
                     style="@style/descr"
                     android:layout_weight="1"

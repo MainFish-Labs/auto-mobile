@@ -1,5 +1,6 @@
 package com.mainfish.europrotocola04;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -117,10 +118,10 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
 		t5_cursor.moveToFirst();
 		if (t5_cursor != null && t5_cursor.moveToFirst()) {
 			inputScheme_temp = t5_cursor.getString(t5_cursor.getColumnIndex(EPR_system_DataBaseContainer.T5_01));
+
+			t5_cursor.close();
+			t5_cursor.moveToFirst();
 		}
-		
-		t5_cursor.close();
-		t5_cursor.moveToFirst();
 		
 		schemeImage = inputScheme_temp;
 		
@@ -263,7 +264,10 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
     }
 
     public void gotoSignPage (View view) {
-        getBase();
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+	    getBase();
 
         Intent intentSignPage = new Intent(this, EPR_p07_SignPage.class);
         startActivity(intentSignPage);
@@ -271,7 +275,10 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
     }
 
     public void gotoCircum (View view) {
-        getBase();
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+	    getBase();
 
         Intent intentCircum = new Intent(this, EPR_p05_Circumstances.class);
         startActivity(intentCircum);
@@ -296,7 +303,10 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
             mDrawerLayout.closeDrawer(GravityCompat.END);
         } else {
-            getBase();
+
+	        ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+	        getBase();
             super.onBackPressed();
         }
     }
@@ -338,7 +348,10 @@ public class EPR_p06_SchemePage extends AppCompatActivity {
                 break;
 
             case R.id.action_clear_db:
-                File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
+
+	            ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+	            File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
                 dbSelf.delete();
 
                 dataCheckFile.delete();

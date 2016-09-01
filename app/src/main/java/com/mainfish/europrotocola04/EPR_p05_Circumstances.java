@@ -1,5 +1,6 @@
 package com.mainfish.europrotocola04;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -76,7 +77,6 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
 
 	    super.onCreate(savedInstanceState);
-
 	    setContentView(R.layout.epr_p05_circumstances);
 
 	    mDataBase = new EPR_system_DataBaseContainer(this, "am_protocol.db", null, 1);
@@ -295,11 +295,11 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 					t4A_cursor.getString(t4A_cursor.getColumnIndex(EPR_system_DataBaseContainer.T4A_17)),
 					t4A_cursor.getString(t4A_cursor.getColumnIndex(EPR_system_DataBaseContainer.T4A_18))
 			};
+
+			t4A_cursor.close();
+			t4A_cursor.moveToFirst();
 			
 		}
-
-		t4A_cursor.close();
-		t4A_cursor.moveToFirst();
 		
 		t4B_cursor = dbCircum.query(db_circumB_name, new String[]{
 						EPR_system_DataBaseContainer.T4B_01,
@@ -346,11 +346,11 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 					t4B_cursor.getString(t4B_cursor.getColumnIndex(EPR_system_DataBaseContainer.T4B_17)),
 					t4B_cursor.getString(t4B_cursor.getColumnIndex(EPR_system_DataBaseContainer.T4B_18))
 			};
+
+			t4B_cursor.close();
+			t4B_cursor.moveToFirst();
 			
 		}
-		
-		t4B_cursor.close();
-		t4B_cursor.moveToFirst();
 		
 		boolean[] checkBoolA = new boolean[total];
 		boolean[] checkBoolB = new boolean[total];
@@ -647,6 +647,9 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 
     public void gotoSchemePage (View view) {
 
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
+
 	    getBase();
 
         Intent intentSchemePage = new Intent(this, EPR_p06_SchemePage.class);
@@ -655,6 +658,9 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
     }
 
     public void gotoDriverB (View view) {
+
+	    ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 
 	    getBase();
 
@@ -678,6 +684,9 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 		if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
 			mDrawerLayout.closeDrawer(GravityCompat.END);
 		} else {
+
+			ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 			getBase();
 			super.onBackPressed();
 		}
@@ -715,6 +724,9 @@ public class EPR_p05_Circumstances extends AppCompatActivity {
 				break;
 
 			case R.id.action_clear_db:
+
+				ProgressDialog.show(this, "Загрузка", "Идёт обращение к базе данных...");
+
 				File dbSelf = new File("/data/data/com.mainfish.europrotocola04/databases/am_protocol.db");
 				dbSelf.delete();
 
