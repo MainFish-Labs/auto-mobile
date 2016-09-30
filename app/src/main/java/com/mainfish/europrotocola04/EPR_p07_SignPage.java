@@ -53,7 +53,7 @@ public class EPR_p07_SignPage extends AppCompatActivity {
 
 	public Cursor t6a_cursor, t6b_cursor; // !!!!
 
-	public String yes = "Да", no = "Нет", eффmpty = "";
+	public String yes = "Да", no = "Нет", empty = "";
 
 	private EPR_system_DataBaseContainer mDataBase;
 	private SQLiteDatabase dbSign;
